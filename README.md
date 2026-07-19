@@ -14,22 +14,40 @@ Welcome to the ultimate repository and resource hub for Java Backend, Data Struc
 
 Select a module below to start preparing:
 
-### 🖥️ [System Design](./System-Design/)
-*   Learn how to design highly scalable, available, and reliable distributed systems.
-*   Master core concepts: load balancing, caching, database partitioning, microservices, and system design frameworks.
-*   [Go to System Design Guide ➔](./System-Design/)
+<div class="topic-grid">
+  <a href="./System-Design/" class="topic-card">
+    <div class="topic-card-icon"><i class="fas fa-desktop"></i></div>
+    <div class="topic-card-content">
+      <h3 class="topic-card-title">System Design</h3>
+      <p class="topic-card-description">Learn how to design highly scalable, available, and reliable distributed systems. Master load balancing, caching, database partitioning, consistency models, and microservices.</p>
+      <span class="topic-card-link">Go to System Design Guide <i class="fas fa-arrow-right"></i></span>
+    </div>
+  </a>
 
-### ☕ Java & Concurrency (Coming Soon)
-*   Deep dive into JVM internals, Garbage Collection tuning, and memory management.
-*   Concurrency utilities (`java.util.concurrent`), multithreading patterns, and the Java Memory Model (JMM).
+  <div class="topic-card disabled">
+    <div class="topic-card-icon"><i class="fab fa-java"></i></div>
+    <div class="topic-card-content">
+      <h3 class="topic-card-title">Java & Concurrency <span class="badge badge-soon">Soon</span></h3>
+      <p class="topic-card-description">Deep dive into JVM internals, Garbage Collection tuning, memory management, concurrent utilities (java.util.concurrent), multithreading patterns, and the Java Memory Model.</p>
+    </div>
+  </div>
 
-### 📊 Data Structures & Algorithms (Coming Soon)
-*   Key DSA patterns: Two Pointers, Sliding Window, Trees, Graphs, Dynamic Programming, and more.
-*   Java-specific collection framework details and optimization tips.
+  <div class="topic-card disabled">
+    <div class="topic-card-icon"><i class="fas fa-leaf"></i></div>
+    <div class="topic-card-content">
+      <h3 class="topic-card-title">Spring Boot <span class="badge badge-soon">Soon</span></h3>
+      <p class="topic-card-description">Master Spring Core IoC/DI, Spring Boot auto-configuration, security, cloud-native architectures, API gateways, service discovery, and transaction management.</p>
+    </div>
+  </div>
 
-### 🍃 Spring Boot & Microservices (Coming Soon)
-*   Spring Core (IoC/DI), Spring Boot auto-configuration, security, and transaction management.
-*   Building cloud-native architectures, API gateways, service discovery, and circuit breakers.
+  <div class="topic-card disabled">
+    <div class="topic-card-icon"><i class="fas fa-chart-bar"></i></div>
+    <div class="topic-card-content">
+      <h3 class="topic-card-title">DSA & Algorithms <span class="badge badge-soon">Soon</span></h3>
+      <p class="topic-card-description">Review core coding patterns (Two Pointers, Sliding Window, Trees, Graphs, Dynamic Programming) and optimize Java Collections framework performance.</p>
+    </div>
+  </div>
+</div>
 
 ---
 
@@ -41,5 +59,5 @@ Select a module below to start preparing:
 
 ---
 
-## 🎨 GitHub Pages Site Theme
-This site is fully optimized to be built with Jekyll and served via **GitHub Pages**. We use the clean, responsive `jekyll-theme-cayman` layout to present all markdown content as a polished documentation website.
+## 🎨 Developer-Centric Study Portal
+This site is built as a custom developer prep portal. Optimized to render cleanly as a premium documentation website, it supports dark mode toggle, keyboard navigation, and responsive layouts.

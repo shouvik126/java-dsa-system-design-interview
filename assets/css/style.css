@@ -3,20 +3,24 @@
    ========================================================================== */
 :root {
   /* Light Theme Palette */
-  --bg-color: #ffffff;
-  --bg-sidebar: #f8fafc;
-  --border-color: #e2e8f0;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --bg-color: #f8fafc;             /* Slate 50 */
+  --bg-content: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-navbar: rgba(255, 255, 255, 0.8);
+  --border-color: #e2e8f0;         /* Slate 200 */
+  --text-primary: #0f172a;         /* Slate 900 */
+  --text-secondary: #334155;       /* Slate 700 */
+  --text-muted: #64748b;           /* Slate 500 */
   
-  --brand-color: #6366f1;          /* Modern Indigo */
-  --brand-hover: #4f46e5;
-  --brand-light: #e0e7ff;
+  --brand-color: #4f46e5;          /* Vibrant Indigo 600 */
+  --brand-hover: #4338ca;          /* Indigo 700 */
+  --brand-light: #e0e7ff;          /* Indigo 100 */
+  --brand-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --brand-glow: rgba(79, 70, 229, 0.12);
   
-  --code-bg: #f1f5f9;
-  --code-color: #ea580c;           /* clean dark orange */
-  --blockquote-bg: #f8fafc;
+  --code-bg: rgba(79, 70, 229, 0.05);
+  --code-color: #4f46e5;
+  --blockquote-bg: #f1f5f9;
   --blockquote-border: #cbd5e1;
   
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -27,21 +31,25 @@
    DARK THEME OVERRIDES
    ========================================================================== */
 .dark-theme {
-  --bg-color: #09090b;             /* Zinc 950 */
-  --bg-sidebar: #0c0c0e;           /* Slighly darker sidebar */
-  --border-color: #27272a;         /* Zinc 800 */
-  --text-primary: #f4f4f5;         /* Zinc 100 */
-  --text-secondary: #a1a1aa;       /* Zinc 400 */
-  --text-muted: #52525b;           /* Zinc 600 */
+  --bg-color: #0b0f19;             /* Space Navy */
+  --bg-content: #111827;           /* Slate 900 */
+  --bg-sidebar: #070a13;           /* Deeper Space Navy */
+  --bg-navbar: rgba(11, 15, 25, 0.8);
+  --border-color: #1e293b;         /* Slate 800 */
+  --text-primary: #f8fafc;         /* Slate 50 */
+  --text-secondary: #cbd5e1;       /* Slate 300 */
+  --text-muted: #64748b;           /* Slate 500 */
   
-  --brand-color: #818cf8;          /* Light Indigo */
-  --brand-hover: #6366f1;
+  --brand-color: #6366f1;          /* Indigo 500 */
+  --brand-hover: #818cf8;          /* Indigo 400 */
   --brand-light: #1e1b4b;          /* Deep Indigo Background */
+  --brand-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --brand-glow: rgba(99, 102, 241, 0.2);
   
-  --code-bg: #18181b;              /* Zinc 900 */
-  --code-color: #f97316;           /* Bright orange */
-  --blockquote-bg: #18181b;
-  --blockquote-border: #3f3f46;
+  --code-bg: rgba(99, 102, 241, 0.1);
+  --code-color: #a5b4fc;
+  --blockquote-bg: #111827;
+  --blockquote-border: #1e293b;
 }
 
 /* ==========================================================================
@@ -82,10 +90,12 @@ a:hover {
   left: 0;
   right: 0;
   height: 64px;
-  background-color: var(--bg-color);
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: 100;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-container {
@@ -205,12 +215,15 @@ a:hover {
   left: 0;
   right: 0;
   height: 56px;
-  background-color: var(--bg-color);
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   padding: 0 1rem;
   align-items: center;
   justify-content: space-between;
   z-index: 100;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .mobile-btn {
@@ -379,19 +392,22 @@ a:hover {
   display: block;
   font-size: 0.9rem;
   color: var(--text-secondary);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sub-tree a:hover {
-  color: var(--text-primary);
-  background-color: var(--border-color);
+  color: var(--brand-color);
+  background-color: var(--bg-color);
+  transform: translateX(4px);
 }
 
 .sub-tree a.active-link {
   color: var(--brand-color);
   background-color: var(--brand-light);
   font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.08);
 }
 
 .badge {
@@ -480,21 +496,24 @@ a:hover {
 /* Code Snippets */
 .markdown-body code {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: 0.85em;
   background-color: var(--code-bg);
-  padding: 0.2rem 0.4rem;
+  padding: 0.18rem 0.4rem;
   border-radius: 6px;
   color: var(--code-color);
-  transition: background-color 0.2s ease;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  transition: all 0.2s ease;
+  word-break: break-word;
 }
 
 .markdown-body pre {
-  background-color: #0f172a; /* keep code blocks dark for visual consistency */
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
+  background-color: #0d1117;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.75rem;
   overflow-x: auto;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .markdown-body pre code {
@@ -503,18 +522,20 @@ a:hover {
   padding: 0;
   border-radius: 0;
   font-size: 0.85rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  border: none;
 }
 
 /* Blockquotes */
 .markdown-body blockquote {
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   border-left: 4px solid var(--brand-color);
   background-color: var(--blockquote-bg);
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  transition: background-color 0.2s ease;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
 }
 
 .markdown-body blockquote p:last-child {
@@ -699,4 +720,116 @@ a:hover {
   .pagination-btn {
     min-width: 100%;
   }
+}
+
+/* ==========================================================================
+   HOMEPAGE INTERACTIVE TOPIC GRID CARDS
+   ========================================================================== */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  background-color: var(--bg-content);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.topic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--brand-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.topic-card:hover:not(.disabled) {
+  transform: translateY(-4px);
+  border-color: var(--brand-color);
+  box-shadow: 0 12px 30px var(--brand-glow);
+  background-color: var(--bg-sidebar);
+}
+
+.topic-card:hover::before {
+  opacity: 1;
+}
+
+.topic-card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.topic-card-icon {
+  font-size: 2rem;
+  color: var(--brand-color);
+  margin-bottom: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.topic-card:hover:not(.disabled) .topic-card-icon {
+  transform: scale(1.1);
+}
+
+.topic-card.disabled .topic-card-icon {
+  color: var(--text-muted);
+}
+
+.topic-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topic-card-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.topic-card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brand-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.topic-card-link i {
+  transition: transform 0.2s ease;
+}
+
+.topic-card:hover .topic-card-link i {
+  transform: translateX(4px);
+}
+
+/* Badge Soon */
+.badge.badge-soon {
+  background-color: var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
 }
