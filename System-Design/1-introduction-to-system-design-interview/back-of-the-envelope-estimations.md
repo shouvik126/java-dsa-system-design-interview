@@ -1,3 +1,9 @@
+---
+layout: default
+title: Back-of-the-Envelope Estimations
+permalink: /System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/
+---
+
 # Back-of-the-Envelope Estimations
 
 Back-of-the-envelope estimations in system design interviews represent quick, rough calculations—similar to math you might sketch on a napkin during lunch. While not highly detailed or precise, they provide a reliable ballpark figure. These calculations help you quickly evaluate the feasibility of a proposed setup, estimate its metrics, and identify potential bottlenecks.

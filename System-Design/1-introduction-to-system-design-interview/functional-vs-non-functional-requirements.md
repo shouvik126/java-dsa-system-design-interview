@@ -1,3 +1,9 @@
+---
+layout: default
+title: Functional vs. Non-Functional Requirements
+permalink: /System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/
+---
+
 # Functional vs. Non-Functional Requirements
 
 For system design interviews, grasping the difference between functional and non-functional requirements is essential for demonstrating your ability to design a system that satisfies both its intended actions and its operational qualities.

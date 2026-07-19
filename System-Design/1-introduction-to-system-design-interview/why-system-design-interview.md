@@ -1,3 +1,9 @@
+---
+layout: default
+title: Why System Design Interview
+permalink: /System-Design/1-introduction-to-system-design-interview/why-system-design-interview/
+---
+
 # Why System Design Interview
 
 System design interviews are structured to evaluate a candidate's proficiency in architecting and understanding complex, large-scale software systems. They form an essential checkpoint in the evaluation process for backend engineers, system architects, infrastructure specialists, and DevOps practitioners.

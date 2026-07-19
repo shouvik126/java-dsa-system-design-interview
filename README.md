@@ -1,3 +1,9 @@
+---
+layout: default
+title: Home
+permalink: /
+---
+
 # Java Backend & System Design Interview Prep
 
 Welcome to the ultimate repository and resource hub for Java Backend, Data Structures & Algorithms (DSA), and System Design interview preparation. This platform is designed to help software engineers transition to senior roles and ace interviews at top-tier tech companies.

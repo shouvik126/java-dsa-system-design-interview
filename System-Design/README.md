@@ -1,3 +1,9 @@
+---
+layout: default
+title: System Design Guide
+permalink: /System-Design/
+---
+
 # System Design Interview Preparation
 
 Evaluating scalability, reliability, and architectural trade-offs under pressure is the primary focus of System Design interviews. This guide consolidates the fundamental principles utilized daily by senior backend and systems engineers—ranging from load balancing and caching strategies to database partitioning and microservices.

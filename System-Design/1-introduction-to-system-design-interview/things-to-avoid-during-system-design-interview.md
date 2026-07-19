@@ -1,3 +1,9 @@
+---
+layout: default
+title: Things to Avoid During System Design Interview
+permalink: /System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/
+---
+
 # Things to Avoid During System Design Interview
 
 In a system design interview, while showcasing your skills and knowledge is important, understanding common pitfalls is equally vital. Steering clear of these mistakes can significantly increase your chances of success. Here are the key "don'ts" for a system design interview:
