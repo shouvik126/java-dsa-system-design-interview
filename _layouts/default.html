@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kalam:wght@400;700&family=Patrick+Hand&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Inline Theme Script to prevent flash of light theme -->
     <script>
@@ -22,211 +22,179 @@
     </script>
   </head>
   <body>
-    <!-- Top Desk Header -->
-    <header class="desk-header">
-      <div class="header-board">
-        <!-- Floating Theme Toggle Button -->
-        <button id="themeToggle" class="chalk-theme-toggle" aria-label="Toggle Dark Theme">
-          <i class="fas fa-moon"></i>
-        </button>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="nav-logo">
+          <i class="fas fa-graduation-cap"></i> {{ site.title }}
+        </a>
 
-        <h1 class="chalk-title">{{ site.title }}</h1>
-        <p class="chalk-tagline">{{ site.description }}</p>
-        
-        <!-- Pinned Note Buttons -->
-        <div class="pinned-notes">
-          <a href="https://github.com/shouvik126/java-dsa-system-design-interview" class="sticky-note blue-note" target="_blank">
-            <i class="fab fa-github"></i> GitHub Repo
-          </a>
-          <a href="https://github.com/shouvik126/java-dsa-system-design-interview/archive/refs/heads/main.zip" class="sticky-note yellow-note">
-            <i class="fas fa-file-archive"></i> Get .zip
-          </a>
-          <a href="https://github.com/shouvik126/java-dsa-system-design-interview/archive/refs/heads/main.tar.gz" class="sticky-note pink-note">
-            <i class="fas fa-file-archive"></i> Get .tar.gz
-          </a>
-        </div>
-
-        <!-- Notebook Tab Buttons (Sticky Tabs at top of Notebook) -->
-        <div class="notebook-tabs">
-          <a href="{{ '/' | relative_url }}" class="tab-btn {% if page.url == '/' %}active{% endif %}">
+        <!-- Desktop Category Navigation -->
+        <div class="nav-links">
+          <a href="{{ '/' | relative_url }}" class="nav-item {% if page.url == '/' %}active{% endif %}">
             Home
           </a>
-          <a href="{{ '/System-Design/' | relative_url }}" class="tab-btn {% if page.url contains '/System-Design/' %}active{% endif %}">
+          <a href="{{ '/System-Design/' | relative_url }}" class="nav-item {% if page.url contains '/System-Design/' %}active{% endif %}">
             System Design
           </a>
-          <a href="#" class="tab-btn disabled" title="Coming Soon">
+          <a href="#" class="nav-item disabled" title="Coming Soon">
             Java
           </a>
-          <a href="#" class="tab-btn disabled" title="Coming Soon">
+          <a href="#" class="nav-item disabled" title="Coming Soon">
             Spring Boot
           </a>
-          <a href="#" class="tab-btn disabled" title="Coming Soon">
+          <a href="#" class="nav-item disabled" title="Coming Soon">
             DSA
           </a>
         </div>
-      </div>
-    </header>
 
-    <!-- Mobile Navigation Toggle -->
-    <div class="mobile-toggle-bar">
-      <button id="sidebarToggle" class="toggle-btn">
-        <i class="fas fa-bars"></i> Notes Menu
+        <!-- Right Side Nav Actions -->
+        <div class="nav-actions">
+          <a href="https://github.com/shouvik126/java-dsa-system-design-interview" class="btn btn-github" target="_blank" title="View on GitHub">
+            <i class="fab fa-github"></i> <span>GitHub</span>
+          </a>
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <button id="sidebarToggle" class="mobile-btn" aria-label="Toggle Navigation Menu">
+        <i class="fas fa-bars"></i>
       </button>
-      <button id="themeToggleMobile" class="toggle-btn theme-toggle-mobile" aria-label="Toggle Dark Theme">
+      <span class="mobile-logo">{{ site.title }}</span>
+      <button id="themeToggleMobile" class="mobile-btn" aria-label="Toggle Dark Theme">
         <i class="fas fa-moon"></i>
       </button>
-      <span class="mobile-page-title">{{ page.title | default: "Guide" }}</span>
     </div>
 
-    <!-- Main Desk Area -->
-    <div class="desk-surface">
-      <!-- Lined Notebook Container -->
-      <div class="open-notebook">
-        
-        <!-- Left Page: Sidebar (Tree Navigation) -->
-        <aside class="sidebar-page" id="sidebarMenu">
-          <nav class="notebook-nav">
-            <div class="nav-section">
-              <h3 class="section-heading">
-                <a href="{{ '/System-Design/' | relative_url }}" class="{% if page.url == '/System-Design/' %}active-link{% endif %}">
-                  System Design Notes
-                </a>
-              </h3>
-              <ul class="nav-tree">
-                <li class="nav-tree-item">
-                  <span class="group-title">1. Introduction to System Design</span>
-                  <ul class="sub-tree">
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/' | relative_url }}" class="{% if page.url contains 'why-system-design-interview' %}active-link{% endif %}">
-                        Why System Design Interview
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/' | relative_url }}" class="{% if page.url contains 'functional-vs-non-functional-requirements' %}active-link{% endif %}">
-                        Functional vs. Non-Functional
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/' | relative_url }}" class="{% if page.url contains 'back-of-the-envelope-estimations' %}active-link{% endif %}">
-                        Back-of-the-Envelope
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/' | relative_url }}" class="{% if page.url contains 'things-to-avoid-during-system-design-interview' %}active-link{% endif %}">
-                        Things to Avoid
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                
-                <!-- Placeholder Sections -->
-                <li class="nav-tree-item disabled-nav-group">
-                  <span class="group-title">2. Basics <span class="scribble-tag">Soon</span></span>
-                </li>
-                <li class="nav-tree-item disabled-nav-group">
-                  <span class="group-title">3. Trade-offs <span class="scribble-tag">Soon</span></span>
-                </li>
-                <li class="nav-tree-item disabled-nav-group">
-                  <span class="group-title">4. Problems <span class="scribble-tag">Soon</span></span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="nav-section">
-              <h3 class="section-heading disabled-heading">Java & Concurrency <span class="scribble-tag">Soon</span></h3>
-            </div>
-            
-            <div class="nav-section">
-              <h3 class="section-heading disabled-heading">Spring Boot <span class="scribble-tag">Soon</span></h3>
-            </div>
-
-            <div class="nav-section">
-              <h3 class="section-heading disabled-heading">DSA <span class="scribble-tag">Soon</span></h3>
-            </div>
-          </nav>
-        </aside>
-
-        <!-- Center Metal Spiral Spine -->
-        <div class="notebook-spine">
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-        </div>
-
-        <!-- Right Page: Main Content Area -->
-        <main class="content-page">
-          <article class="handwritten-body">
-            {{ content }}
-          </article>
-
-          <!-- Navigation Footer (Previous/Next Topic) -->
-          {% if page.prev_url or page.next_url %}
-          <footer class="notebook-footer">
-            <hr class="dashed-hr">
-            <div class="page-nav">
-              {% if page.prev_url %}
-              <a href="{{ page.prev_url | relative_url }}" class="footer-nav-btn prev-btn">
-                <span class="hand-arrow">←</span>
-                <div class="nav-text">
-                  <span class="nav-direction">Prev Section</span>
-                  <span class="nav-page-title">{{ page.prev_title }}</span>
-                </div>
+    <!-- Layout Container -->
+    <div class="layout-container">
+      <!-- Left Sidebar (Tree Navigation) -->
+      <aside class="sidebar" id="sidebarMenu">
+        <nav class="sidebar-nav">
+          <div class="sidebar-section">
+            <h3 class="sidebar-heading">
+              <a href="{{ '/System-Design/' | relative_url }}" class="{% if page.url == '/System-Design/' %}active{% endif %}">
+                System Design
               </a>
-              {% else %}
-              <div class="nav-placeholder"></div>
-              {% endif %}
+            </h3>
+            <ul class="sidebar-tree">
+              <li class="tree-group">
+                <span class="group-title">1. Introduction to System Design</span>
+                <ul class="sub-tree">
+                  <li>
+                    <a href="{{ '/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/' | relative_url }}" class="{% if page.url contains 'why-system-design-interview' %}active-link{% endif %}">
+                      Why System Design Interview
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ '/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/' | relative_url }}" class="{% if page.url contains 'functional-vs-non-functional-requirements' %}active-link{% endif %}">
+                      Functional vs. Non-Functional
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ '/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/' | relative_url }}" class="{% if page.url contains 'back-of-the-envelope-estimations' %}active-link{% endif %}">
+                      Back-of-the-Envelope
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ '/System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/' | relative_url }}" class="{% if page.url contains 'things-to-avoid-during-system-design-interview' %}active-link{% endif %}">
+                      Things to Avoid
+                    </a>
+                  </li>
+                </ul>
+              </li>
               
-              {% if page.next_url %}
-              <a href="{{ page.next_url | relative_url }}" class="footer-nav-btn next-btn">
-                <div class="nav-text">
-                  <span class="nav-direction">Next Section</span>
-                  <span class="nav-page-title">{{ page.next_title }}</span>
-                </div>
-                <span class="hand-arrow">→</span>
-              </a>
-              {% else %}
-              <div class="nav-placeholder"></div>
-              {% endif %}
-            </div>
-          </footer>
-          {% endif %}
-        </main>
-        
-      </div>
+              <!-- Placeholders -->
+              <li class="tree-group disabled-group">
+                <span class="group-title">2. Basics <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">3. Trade-offs <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">4. Problems <span class="badge">Soon</span></span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-heading disabled-section">Java & Concurrency <span class="badge">Soon</span></h3>
+          </div>
+          
+          <div class="sidebar-section">
+            <h3 class="sidebar-heading disabled-section">Spring Boot <span class="badge">Soon</span></h3>
+          </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-heading disabled-section">DSA <span class="badge">Soon</span></h3>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        <article class="markdown-body">
+          {{ content }}
+        </article>
+
+        <!-- Pagination Navigation Footer -->
+        {% if page.prev_url or page.next_url %}
+        <footer class="pagination-footer">
+          <div class="pagination-nav">
+            {% if page.prev_url %}
+            <a href="{{ page.prev_url | relative_url }}" class="pagination-btn prev">
+              <span class="nav-icon"><i class="fas fa-chevron-left"></i></span>
+              <div class="nav-details">
+                <span class="nav-label">Previous Section</span>
+                <span class="nav-title">{{ page.prev_title }}</span>
+              </div>
+            </a>
+            {% else %}
+            <div class="nav-placeholder"></div>
+            {% endif %}
+            
+            {% if page.next_url %}
+            <a href="{{ page.next_url | relative_url }}" class="pagination-btn next">
+              <div class="nav-details">
+                <span class="nav-label">Next Section</span>
+                <span class="nav-title">{{ page.next_title }}</span>
+              </div>
+              <span class="nav-icon"><i class="fas fa-chevron-right"></i></span>
+            </a>
+            {% else %}
+            <div class="nav-placeholder"></div>
+            {% endif %}
+          </div>
+        </footer>
+        {% endif %}
+      </main>
     </div>
 
-    <!-- Theme & Menu Scripts -->
+    <!-- Script triggers -->
     <script>
-      // Mobile sidebar menu toggle
+      // Sidebar menu toggle for mobile
       const sidebarToggle = document.getElementById('sidebarToggle');
-      const sidebarMenu = document.querySelector('.sidebar-page');
+      const sidebarMenu = document.getElementById('sidebarMenu');
       
       if (sidebarToggle && sidebarMenu) {
-        sidebarToggle.addEventListener('click', function() {
+        sidebarToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
           sidebarMenu.classList.toggle('open');
         });
       }
       
       document.addEventListener('click', function(event) {
-        if (sidebarMenu && sidebarMenu.classList.contains('open') && !sidebarMenu.contains(event.target) && !sidebarToggle.contains(event.target)) {
+        if (sidebarMenu && sidebarMenu.classList.contains('open') && !sidebarMenu.contains(event.target)) {
           sidebarMenu.classList.remove('open');
         }
       });
 
-      // Dark/Light Theme Toggle
+      // Light/Dark Theme Switcher
       const toggleBtn = document.getElementById('themeToggle');
       const toggleBtnMobile = document.getElementById('themeToggleMobile');
       
