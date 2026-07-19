@@ -1,179 +1,167 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }} | Java Backend & System Design Interview Prep</title>
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kalam:wght@400;700&family=Patrick+Hand&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
-    <!-- Top Desk Header -->
-    <header class="desk-header">
-      <div class="header-board">
-        <h1 class="chalk-title">{{ site.title }}</h1>
-        <p class="chalk-tagline">{{ site.description }}</p>
-        
-        <!-- Pinned Note Buttons -->
-        <div class="pinned-notes">
-          <a href="https://github.com/shouvik126/java-dsa-system-design-interview" class="sticky-note blue-note" target="_blank">
-            <i class="fab fa-github"></i> GitHub Repo
-          </a>
-          <a href="https://github.com/shouvik126/java-dsa-system-design-interview/archive/refs/heads/main.zip" class="sticky-note yellow-note">
-            <i class="fas fa-file-archive"></i> Get .zip
-          </a>
-          <a href="https://github.com/shouvik126/java-dsa-system-design-interview/archive/refs/heads/main.tar.gz" class="sticky-note pink-note">
-            <i class="fas fa-file-archive"></i> Get .tar.gz
-          </a>
-        </div>
 
-        <!-- Notebook Tab Buttons (Sticky Tabs at top of Notebook) -->
-        <div class="notebook-tabs">
-          <a href="{{ '/' | relative_url }}" class="tab-btn {% if page.url == '/' %}active{% endif %}">
-            Home
-          </a>
-          <a href="{{ '/System-Design/' | relative_url }}" class="tab-btn {% if page.url contains '/System-Design/' %}active{% endif %}">
-            System Design
-          </a>
-          <a href="#" class="tab-btn disabled" title="Coming Soon">
-            Java
-          </a>
-          <a href="#" class="tab-btn disabled" title="Coming Soon">
-            Spring Boot
-          </a>
-          <a href="#" class="tab-btn disabled" title="Coming Soon">
-            DSA
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }} | Java Backend & System Design Interview Prep</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Top Header Banner -->
+  <header class="main-header">
+    <div class="header-container">
+      <h1 class="site-title">{{ site.title }}</h1>
+      <p class="site-tagline">{{ site.description }}</p>
+
+      <!-- Standard Action Buttons -->
+      <div class="action-buttons">
+        <a href="https://github.com/shouvik126/java-dsa-system-design-interview" class="header-btn" target="_blank">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+        <a href="https://github.com/shouvik126/java-dsa-system-design-interview/archive/refs/heads/main.zip"
+          class="header-btn">
+          <i class="fas fa-file-archive"></i> Download .zip
+        </a>
+        <a href="https://github.com/shouvik126/java-dsa-system-design-interview/archive/refs/heads/main.tar.gz"
+          class="header-btn">
+          <i class="fas fa-file-archive"></i> Download .tar.gz
+        </a>
       </div>
-    </header>
 
-    <!-- Mobile Navigation Toggle -->
-    <div class="mobile-toggle-bar">
-      <button id="sidebarToggle" class="toggle-btn">
-        <i class="fas fa-bars"></i> Notes Menu
-      </button>
-      <span class="mobile-page-title">{{ page.title | default: "Guide" }}</span>
+      <!-- Section Navigation Buttons -->
+      <div class="section-nav">
+        <a href="{{ '/' | relative_url }}" class="nav-btn {% if page.url == '/' %}active{% endif %}">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a href="{{ '/System-Design/' | relative_url }}"
+          class="nav-btn {% if page.url contains '/System-Design/' %}active{% endif %}">
+          <i class="fas fa-project-diagram"></i> System Design
+        </a>
+        <a href="#" class="nav-btn disabled" title="Coming Soon">
+          <i class="fab fa-java"></i> Java
+        </a>
+        <a href="#" class="nav-btn disabled" title="Coming Soon">
+          <i class="fas fa-leaf"></i> Spring Boot
+        </a>
+        <a href="#" class="nav-btn disabled" title="Coming Soon">
+          <i class="fas fa-stream"></i> DSA
+        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- Main Desk Area -->
-    <div class="desk-surface">
-      <!-- Lined Notebook Container -->
-      <div class="open-notebook">
-        
-        <!-- Left Page: Sidebar (Tree Navigation) -->
-        <aside class="sidebar-page" id="sidebarMenu">
-          <nav class="notebook-nav">
-            <div class="nav-section">
-              <h3 class="section-heading">
-                <a href="{{ '/System-Design/' | relative_url }}" class="{% if page.url == '/System-Design/' %}active-link{% endif %}">
-                  System Design Notes
-                </a>
-              </h3>
-              <ul class="nav-tree">
-                <li class="nav-tree-item">
-                  <span class="group-title">1. Introduction to System Design</span>
-                  <ul class="sub-tree">
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/' | relative_url }}" class="{% if page.url contains 'why-system-design-interview' %}active-link{% endif %}">
-                        Why System Design Interview
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/' | relative_url }}" class="{% if page.url contains 'functional-vs-non-functional-requirements' %}active-link{% endif %}">
-                        Functional vs. Non-Functional
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/' | relative_url }}" class="{% if page.url contains 'back-of-the-envelope-estimations' %}active-link{% endif %}">
-                        Back-of-the-Envelope
-                      </a>
-                    </li>
-                    <li>
-                      <a href="{{ '/System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/' | relative_url }}" class="{% if page.url contains 'things-to-avoid-during-system-design-interview' %}active-link{% endif %}">
-                        Things to Avoid
-                      </a>
-                    </li>
-                  </ul>
+  <!-- Mobile Navigation Toggle -->
+  <div class="mobile-toggle-bar">
+    <button id="sidebarToggle" class="toggle-btn">
+      <i class="fas fa-bars"></i> Menu
+    </button>
+    <span class="mobile-page-title">{{ page.title | default: "Guide" }}</span>
+  </div>
+
+  <!-- Main Container -->
+  <div class="app-layout">
+    <!-- Left Sidebar (Tree Navigation) -->
+    <aside class="sidebar" id="sidebarMenu">
+      <nav class="tree-nav">
+        <div class="tree-section">
+          <h3 class="tree-section-title">
+            <a href="{{ '/System-Design/' | relative_url }}"
+              class="{% if page.url == '/System-Design/' %}active-link{% endif %}">
+              System Design
+            </a>
+          </h3>
+          <ul class="tree-group">
+            <li class="tree-item">
+              <span class="group-label">1. Introduction to System Design</span>
+              <ul class="sub-group">
+                <li>
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/' | relative_url }}"
+                    class="{% if page.url contains 'why-system-design-interview' %}active-link{% endif %}">
+                    Why System Design Interview
+                  </a>
                 </li>
-                
-                <!-- Placeholder Sections -->
-                <li class="nav-tree-item disabled-nav-group">
-                  <span class="group-title">2. Basics <span class="scribble-tag">Soon</span></span>
+                <li>
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/' | relative_url }}"
+                    class="{% if page.url contains 'functional-vs-non-functional-requirements' %}active-link{% endif %}">
+                    Functional vs. Non-Functional
+                  </a>
                 </li>
-                <li class="nav-tree-item disabled-nav-group">
-                  <span class="group-title">3. Trade-offs <span class="scribble-tag">Soon</span></span>
+                <li>
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/' | relative_url }}"
+                    class="{% if page.url contains 'back-of-the-envelope-estimations' %}active-link{% endif %}">
+                    Back-of-the-Envelope
+                  </a>
                 </li>
-                <li class="nav-tree-item disabled-nav-group">
-                  <span class="group-title">4. Problems <span class="scribble-tag">Soon</span></span>
+                <li>
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/' | relative_url }}"
+                    class="{% if page.url contains 'things-to-avoid-during-system-design-interview' %}active-link{% endif %}">
+                    Things to Avoid
+                  </a>
                 </li>
               </ul>
-            </div>
+            </li>
 
-            <div class="nav-section">
-              <h3 class="section-heading disabled-heading">Java & Concurrency <span class="scribble-tag">Soon</span></h3>
-            </div>
-            
-            <div class="nav-section">
-              <h3 class="section-heading disabled-heading">Spring Boot <span class="scribble-tag">Soon</span></h3>
-            </div>
-
-            <div class="nav-section">
-              <h3 class="section-heading disabled-heading">DSA <span class="scribble-tag">Soon</span></h3>
-            </div>
-          </nav>
-        </aside>
-
-        <!-- Center Metal Spiral Spine -->
-        <div class="notebook-spine">
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
-          <div class="spiral-ring"></div>
+            <!-- Placeholder Sections -->
+            <li class="tree-item disabled-group">
+              <span class="group-label">2. System Design Basics <span class="badge">Soon</span></span>
+            </li>
+            <li class="tree-item disabled-group">
+              <span class="group-label">3. System Design Trade-offs <span class="badge">Soon</span></span>
+            </li>
+            <li class="tree-item disabled-group">
+              <span class="group-label">4. System Design Problems <span class="badge">Soon</span></span>
+            </li>
+          </ul>
         </div>
 
-        <!-- Right Page: Main Content Area -->
-        <main class="content-page">
-          <article class="handwritten-body">
-            {{ content }}
-          </article>
-        </main>
-        
-      </div>
-    </div>
+        <div class="tree-section">
+          <h3 class="tree-section-title disabled-section">Java & Concurrency <span class="badge">Soon</span></h3>
+        </div>
 
-    <!-- Script for mobile menu -->
-    <script>
-      document.getElementById('sidebarToggle').addEventListener('click', function() {
-        const sidebar = document.querySelector('.sidebar-page');
-        sidebar.classList.toggle('open');
-      });
-      
-      // Close sidebar when clicking outside of it on mobile
-      document.addEventListener('click', function(event) {
-        const sidebar = document.querySelector('.sidebar-page');
-        const toggle = document.getElementById('sidebarToggle');
-        if (sidebar && sidebar.classList.contains('open') && !sidebar.contains(event.target) && !toggle.contains(event.target)) {
-          sidebar.classList.remove('open');
-        }
-      });
-    </script>
-  </body>
+        <div class="tree-section">
+          <h3 class="tree-section-title disabled-section">Spring Boot <span class="badge">Soon</span></h3>
+        </div>
+
+        <div class="tree-section">
+          <h3 class="tree-section-title disabled-section">Data Structures & Algos <span class="badge">Soon</span></h3>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      <article class="markdown-body">
+        {{ content }}
+      </article>
+    </main>
+  </div>
+
+  <!-- Script for mobile menu -->
+  <script>
+    document.getElementById('sidebarToggle').addEventListener('click', function () {
+      const sidebar = document.getElementById('sidebarMenu');
+      sidebar.classList.toggle('open');
+    });
+
+    // Close sidebar when clicking outside of it on mobile
+    document.addEventListener('click', function (event) {
+      const sidebar = document.getElementById('sidebarMenu');
+      const toggle = document.getElementById('sidebarToggle');
+      if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && !toggle.contains(event.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+
 </html>
