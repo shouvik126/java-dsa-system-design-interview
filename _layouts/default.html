@@ -84,7 +84,10 @@
             </h3>
             <ul class="sidebar-tree">
               <li class="tree-group">
-                <span class="group-title">1. Introduction to System Design</span>
+                <div class="group-header">
+                  <span class="group-title">1. Introduction to System Design</span>
+                  <span class="group-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
                 <ul class="sub-tree">
                   <li>
                     <a href="{{ '/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/' | relative_url }}" class="{% if page.url contains 'why-system-design-interview' %}active-link{% endif %}">
@@ -192,6 +195,24 @@
         if (sidebarMenu && sidebarMenu.classList.contains('open') && !sidebarMenu.contains(event.target)) {
           sidebarMenu.classList.remove('open');
         }
+      });
+
+      // Collapsible Sidebar Tree Groups
+      document.querySelectorAll('.tree-group').forEach(group => {
+        const header = group.querySelector('.group-header');
+        const subTree = group.querySelector('.sub-tree');
+        if (!header || !subTree) return;
+        
+        // Determine initial state: if it contains an active link, keep it open.
+        // Otherwise, start collapsed.
+        const hasActive = subTree.querySelector('.active-link');
+        if (!hasActive) {
+          group.classList.add('collapsed');
+        }
+        
+        header.addEventListener('click', function() {
+          group.classList.toggle('collapsed');
+        });
       });
 
       // Light/Dark Theme Switcher
