@@ -18,6 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
   <!-- Inline Theme Script to prevent flash of light theme -->
   <script>
     (function () {
@@ -288,6 +289,44 @@
       });
     });
 
+    // Render Mermaid diagrams compiled by Kramdown
+    document.addEventListener("DOMContentLoaded", function() {
+      const codeBlocks = document.querySelectorAll("pre code.language-mermaid, pre.language-mermaid, div.language-mermaid pre");
+      codeBlocks.forEach(block => {
+        const rawCode = block.textContent.trim();
+        const mermaidDiv = document.createElement("div");
+        mermaidDiv.className = "mermaid";
+        mermaidDiv.setAttribute('data-original-code', rawCode);
+        mermaidDiv.textContent = rawCode;
+        
+        let parentToReplace = block;
+        if (block.tagName === 'CODE') {
+          parentToReplace = block.parentElement; // pre
+        }
+        
+        // If Kramdown wraps it in outer divs (.highlighter-rouge, etc.)
+        if (parentToReplace.parentElement && parentToReplace.parentElement.classList.contains('highlight')) {
+          parentToReplace = parentToReplace.parentElement.parentElement;
+        }
+        
+        parentToReplace.parentElement.replaceChild(mermaidDiv, parentToReplace);
+      });
+
+      // Initialize Mermaid
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ 
+          startOnLoad: true, 
+          theme: document.documentElement.classList.contains('dark-theme') ? 'dark' : 'default',
+          securityLevel: 'loose'
+        });
+        if (typeof mermaid.run === 'function') {
+          mermaid.run();
+        } else if (typeof mermaid.init === 'function') {
+          mermaid.init();
+        }
+      }
+    });
+
     // Light/Dark Theme Switcher
     const toggleBtn = document.getElementById('themeToggle');
     const toggleBtnMobile = document.getElementById('themeToggleMobile');
@@ -296,6 +335,30 @@
       const isDark = document.documentElement.classList.toggle('dark-theme');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       updateToggleIcons(isDark);
+
+      // Re-render Mermaid charts in the new theme on-the-fly
+      if (typeof mermaid !== 'undefined') {
+        const charts = document.querySelectorAll('.mermaid');
+        if (charts.length > 0) {
+          charts.forEach((chart) => {
+            const originalCode = chart.getAttribute('data-original-code');
+            if (originalCode) {
+              chart.removeAttribute('data-processed');
+              chart.removeAttribute('id');
+              chart.textContent = originalCode;
+            }
+          });
+          mermaid.initialize({ 
+            theme: isDark ? 'dark' : 'default',
+            securityLevel: 'loose'
+          });
+          if (typeof mermaid.run === 'function') {
+            mermaid.run();
+          } else if (typeof mermaid.init === 'function') {
+            mermaid.init();
+          }
+        }
+      }
     }
 
     function updateToggleIcons(isDark) {

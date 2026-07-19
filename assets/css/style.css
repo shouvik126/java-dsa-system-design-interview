@@ -833,3 +833,19 @@ a:hover {
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
 }
+
+/* Mermaid Diagrams */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  background-color: var(--bg-content);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.dark-theme .mermaid {
+  background-color: var(--bg-sidebar);
+}
