@@ -8,10 +8,10 @@ Welcome to the ultimate repository and resource hub for Java Backend, Data Struc
 
 Select a module below to start preparing:
 
-### 🖥️ [System Design](./System%20Design/README.md)
+### 🖥️ [System Design](./System-Design/)
 *   Learn how to design highly scalable, available, and reliable distributed systems.
 *   Master core concepts: load balancing, caching, database partitioning, microservices, and system design frameworks.
-*   [Go to System Design Guide ➔](./System%20Design/README.md)
+*   [Go to System Design Guide ➔](./System-Design/)
 
 ### ☕ Java & Concurrency (Coming Soon)
 *   Deep dive into JVM internals, Garbage Collection tuning, and memory management.
@@ -29,7 +29,7 @@ Select a module below to start preparing:
 
 ## 🚀 How to Use This Resource
 
-1.  **Read the Guides**: Navigate to the specific topic pages (e.g., the [System Design](./System%20Design/README.md) guide) to review theory, architectures, and design patterns.
+1.  **Read the Guides**: Navigate to the specific topic pages (e.g., the [System Design](./System-Design/) guide) to review theory, architectures, and design patterns.
 2.  **Practice System Design**: Apply the 5-step framework detailed in the System Design guide to design real-world systems (e.g., URL shortener, Uber, Web crawler).
 3.  **Contribute**: If you find bugs, typos, or want to add new interview questions/patterns, feel free to open a Pull Request!
 
