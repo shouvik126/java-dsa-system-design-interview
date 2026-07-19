@@ -10,26 +10,26 @@ Here, you will learn a structured methodology to navigate open-ended architectur
 
 To help you prepare systematically, the content is organized into key focus areas:
 
-### 1. Foundations of Distributed Systems
-*   **Scalability**: Horizontal vs. Vertical Scaling
-*   **Availability vs. Reliability**: SLAs, SLOs, and High Availability designs
-*   **CAP Theorem**: Consistency, Availability, and Partition Tolerance trade-offs
-*   **PACELC Theorem**: Extending CAP for latency and consistency trade-offs
+### 1. Introduction to System Design Interview
+*   [Why System Design Interview](./1-introduction-to-system-design-interview/why-system-design-interview.md)
+*   [Functional vs. Non-functional Requirements](./1-introduction-to-system-design-interview/functional-vs-non-functional-requirements.md)
+*   [Back-of-the-Envelope Estimations](./1-introduction-to-system-design-interview/back-of-the-envelope-estimations.md)
+*   [Things to Avoid During System Design Interview](./1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview.md)
 
-### 2. Infrastructure Components
+<!-- ### 2. System Design Basics
 *   **Load Balancing**: Algorithms (Round Robin, Least Connections), Layer 4 vs. Layer 7 load balancers, and DNS round-robin.
 *   **Caching**: Caching patterns (Cache-Aside, Write-Through, Write-Behind), Eviction policies (LRU, LFU, FIFO), and distributed caches like Redis & Memcached.
 *   **Content Delivery Networks (CDNs)**: Push vs. Pull CDNs, Edge caching.
 
-### 3. Databases and Storage
+### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
 *   **Database Scaling**: Replication (Leader-Follower, Leader-Leader), Partitioning/Sharding (Consistent Hashing), and Federation.
 *   **Indexes**: B-Trees, LSM-Trees, and database indexing strategies.
 
-### 4. Communication Protocols
+### 4. System Design Problems
 *   **APIs**: REST, GraphQL, and gRPC.
 *   **Message Queues & Event Streaming**: Pub/Sub systems (Kafka, RabbitMQ) and asynchronous messaging.
-*   **WebSockets & Server-Sent Events (SSE)**: For real-time updates.
+*   **WebSockets & Server-Sent Events (SSE)**: For real-time updates. -->
 
 ---
 
