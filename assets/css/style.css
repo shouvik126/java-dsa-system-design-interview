@@ -242,6 +242,15 @@ a:hover {
   min-height: calc(100vh - 64px);
 }
 
+.layout-container.no-sidebar {
+  justify-content: center;
+}
+
+.layout-container.no-sidebar .content-area {
+  max-width: 900px;
+  width: 100%;
+}
+
 /* ==========================================================================
    LEFT SIDEBAR (TREE MENU)
    ========================================================================== */

@@ -1,3 +1,7 @@
+{% assign show_sidebar = true %}
+{% if page.url == "/" or page.url == "/index.html" or page.sidebar == false %}
+  {% assign show_sidebar = false %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -62,9 +66,13 @@
 
     <!-- Mobile Header -->
     <div class="mobile-header">
+      {% if show_sidebar %}
       <button id="sidebarToggle" class="mobile-btn" aria-label="Toggle Navigation Menu">
         <i class="fas fa-bars"></i>
       </button>
+      {% else %}
+      <div style="width: 40px;"></div>
+      {% endif %}
       <span class="mobile-logo">{{ site.title }}</span>
       <button id="themeToggleMobile" class="mobile-btn" aria-label="Toggle Dark Theme">
         <i class="fas fa-moon"></i>
@@ -72,10 +80,12 @@
     </div>
 
     <!-- Layout Container -->
-    <div class="layout-container">
+    <div class="layout-container{% unless show_sidebar %} no-sidebar{% endunless %}">
       <!-- Left Sidebar (Tree Navigation) -->
+      {% if show_sidebar %}
       <aside class="sidebar" id="sidebarMenu">
         <nav class="sidebar-nav">
+          {% if page.url contains '/System-Design/' %}
           <div class="sidebar-section">
             <h3 class="sidebar-heading">
               <a href="{{ '/System-Design/' | relative_url }}" class="{% if page.url == '/System-Design/' %}active{% endif %}">
@@ -124,20 +134,67 @@
               </li>
             </ul>
           </div>
-
+          {% elsif page.url contains '/Java/' %}
           <div class="sidebar-section">
-            <h3 class="sidebar-heading disabled-section">Java & Concurrency <span class="badge">Soon</span></h3>
+            <h3 class="sidebar-heading">
+              <a href="#" class="active">
+                Java & Concurrency
+              </a>
+            </h3>
+            <ul class="sidebar-tree">
+              <!-- Placeholder groups for Java -->
+              <li class="tree-group disabled-group">
+                <span class="group-title">1. JVM Internals <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">2. Memory Management <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">3. Concurrency <span class="badge">Soon</span></span>
+              </li>
+            </ul>
           </div>
-          
+          {% elsif page.url contains '/Spring-Boot/' %}
           <div class="sidebar-section">
-            <h3 class="sidebar-heading disabled-section">Spring Boot <span class="badge">Soon</span></h3>
+            <h3 class="sidebar-heading">
+              <a href="#" class="active">
+                Spring Boot
+              </a>
+            </h3>
+            <ul class="sidebar-tree">
+              <!-- Placeholder groups for Spring Boot -->
+              <li class="tree-group disabled-group">
+                <span class="group-title">1. Core Concepts <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">2. Microservices <span class="badge">Soon</span></span>
+              </li>
+            </ul>
           </div>
-
+          {% elsif page.url contains '/DSA/' %}
           <div class="sidebar-section">
-            <h3 class="sidebar-heading disabled-section">DSA <span class="badge">Soon</span></h3>
+            <h3 class="sidebar-heading">
+              <a href="#" class="active">
+                DSA
+              </a>
+            </h3>
+            <ul class="sidebar-tree">
+              <!-- Placeholder groups for DSA -->
+              <li class="tree-group disabled-group">
+                <span class="group-title">1. Arrays & Hashing <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">2. Two Pointers <span class="badge">Soon</span></span>
+              </li>
+              <li class="tree-group disabled-group">
+                <span class="group-title">3. Dynamic Programming <span class="badge">Soon</span></span>
+              </li>
+            </ul>
           </div>
+          {% endif %}
         </nav>
       </aside>
+      {% endif %}
 
       <!-- Main Content Area -->
       <main class="content-area">
