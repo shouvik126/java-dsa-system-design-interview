@@ -23,6 +23,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Functional vs. Non-functional Requirements](./1-introduction-to-system-design-interview/functional-vs-non-functional-requirements.md)
 *   [Back-of-the-Envelope Estimations](./1-introduction-to-system-design-interview/back-of-the-envelope-estimations.md)
 *   [Things to Avoid During System Design Interview](./1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview.md)
+*    Quiz
 
 <!-- ### 2. System Design Basics
 *   **Load Balancing**: Algorithms (Round Robin, Least Connections), Layer 4 vs. Layer 7 load balancers, and DNS round-robin.
