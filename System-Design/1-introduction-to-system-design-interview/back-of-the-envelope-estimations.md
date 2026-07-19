@@ -2,6 +2,10 @@
 layout: default
 title: Back-of-the-Envelope Estimations
 permalink: /System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/
+prev_title: "Functional vs. Non-Functional Requirements"
+prev_url: "/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/"
+next_title: "Things to Avoid During System Design Interview"
+next_url: "/System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/"
 ---
 
 # Back-of-the-Envelope Estimations

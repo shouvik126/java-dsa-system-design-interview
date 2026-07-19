@@ -2,6 +2,8 @@
 layout: default
 title: Things to Avoid During System Design Interview
 permalink: /System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/
+prev_title: "Back-of-the-Envelope Estimations"
+prev_url: "/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/"
 ---
 
 # Things to Avoid During System Design Interview

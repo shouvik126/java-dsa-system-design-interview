@@ -2,6 +2,8 @@
 layout: default
 title: Home
 permalink: /
+next_title: "System Design Guide"
+next_url: "/System-Design/"
 ---
 
 # Java Backend & System Design Interview Prep

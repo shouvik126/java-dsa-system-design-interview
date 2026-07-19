@@ -2,6 +2,10 @@
 layout: default
 title: Functional vs. Non-Functional Requirements
 permalink: /System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/
+prev_title: "Why System Design Interview"
+prev_url: "/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/"
+next_title: "Back-of-the-Envelope Estimations"
+next_url: "/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/"
 ---
 
 # Functional vs. Non-Functional Requirements

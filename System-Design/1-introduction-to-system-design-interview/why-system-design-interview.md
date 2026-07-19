@@ -2,6 +2,10 @@
 layout: default
 title: Why System Design Interview
 permalink: /System-Design/1-introduction-to-system-design-interview/why-system-design-interview/
+prev_title: "System Design Guide"
+prev_url: "/System-Design/"
+next_title: "Functional vs. Non-Functional Requirements"
+next_url: "/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/"
 ---
 
 # Why System Design Interview
