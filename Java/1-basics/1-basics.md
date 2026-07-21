@@ -39,7 +39,7 @@ Mastering Java Basics is the foundational prerequisite before diving into Collec
 
 ## 🗺️ Recommended Reading Order
 
-1. **[Java Basics Interview Q&A (Part 1)](./java-basic-questions-01.md)**: Review Java language features, basic syntax, OOP concepts, and core classes.
+1. **[Java Basics Interview Q&A (Part 1)](./1.1-java-basic-questions-01.md)**: Review Java language features, basic syntax, OOP concepts, and core classes.
 2. **[Java Basics Interview Q&A (Part 2)](./java-basic-questions-02.md)** & **[Part 3](./java-basic-questions-03.md)**: Cover exceptions, generics, reflection, annotations, and advanced interview questions.
 3. **[Java Keywords Summary](./java-keyword-summary.md)** & **[Pass-by-Value in Java Explained](./why-there-only-value-passing-in-java.md)**: Clear up high-frequency misconceptions about core concepts.
 4. **[Generics & Wildcards Explained](./generics-and-wildcards.md)**, **[Java Reflection Mechanism](./reflection.md)**, and **[Java Proxy Pattern](./proxy.md)**: Understand foundational framework features.
@@ -50,7 +50,7 @@ Mastering Java Basics is the foundational prerequisite before diving into Collec
 ## 📚 Core Articles & Topics
 
 ### 1. Basic Interview Summaries
-* **[Java Basics Interview Q&A (Part 1)](./java-basic-questions-01.md)**: Language features, basic syntax, OOP fundamentals, standard classes, and common mistakes.
+* **[Java Basics Interview Q&A (Part 1)](./1.1-java-basic-questions-01.md)**: Language features, basic syntax, OOP fundamentals, standard classes, and common mistakes.
 * **[Java Basics Interview Q&A (Part 2)](./java-basic-questions-02.md)**: Deep dive into exception handling, generics, reflection, annotations, and core mechanics.
 * **[Java Basics Interview Q&A (Part 3)](./java-basic-questions-03.md)**: Advanced edge cases, tricky concepts, and detailed interview questions.
 

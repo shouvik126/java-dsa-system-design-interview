@@ -226,8 +226,14 @@
               <ul class="sub-tree">
                 <li>
                   <a href="{{ '/Java/1-basics/1-basics/' | relative_url }}"
-                    class="{% if page.url contains '1-basics' %}active-link{% endif %}">
+                    class="{% if page.url == '/Java/1-basics/1-basics/' %}active-link{% endif %}">
                     Java Basics Guide
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ '/Java/1-basics/1.1-java-basic-questions-01/' | relative_url }}"
+                    class="{% if page.url contains '1.1-java-basic-questions-01' %}active-link{% endif %}">
+                    Java Basics Questions (Part 1)
                   </a>
                 </li>
               </ul>
