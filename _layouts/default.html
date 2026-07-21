@@ -47,8 +47,7 @@
           class="nav-item {% if page.url contains '/System-Design/' %}active{% endif %}">
           System Design
         </a>
-        <a href="{{ '/Java/' | relative_url }}"
-          class="nav-item {% if page.url contains '/Java/' %}active{% endif %}">
+        <a href="{{ '/Java/' | relative_url }}" class="nav-item {% if page.url contains '/Java/' %}active{% endif %}">
           Java
         </a>
         <a href="#" class="nav-item disabled" title="Coming Soon">
@@ -213,12 +212,11 @@
         {% elsif page.url contains '/Java/' %}
         <div class="sidebar-section">
           <h3 class="sidebar-heading">
-            <a href="{{ '/Java/' | relative_url }}"
-              class="{% if page.url == '/Java/' %}active{% endif %}">
+            <a href="{{ '/Java/' | relative_url }}" class="{% if page.url == '/Java/' %}active{% endif %}">
               Java Knowledge System
             </a>
           </h3>
-          <ul class="sidebar-tree">
+          <!--<ul class="sidebar-tree">
             <li class="tree-group">
               <div class="group-header">
                 <span class="group-title">1. Core Java & System</span>
@@ -233,7 +231,7 @@
                 </li>
               </ul>
             </li>
-          </ul>
+          </ul>-->
         </div>
         {% elsif page.url contains '/Spring-Boot/' %}
         <div class="sidebar-section">
