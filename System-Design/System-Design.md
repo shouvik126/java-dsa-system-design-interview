@@ -26,9 +26,15 @@ To help you prepare systematically, the content is organized into key focus area
 *    Quiz
 
 ### 2. System Design Basics
-*   **Load Balancing**: Algorithms (Round Robin, Least Connections), Layer 4 vs. Layer 7 load balancers, and DNS round-robin.
-*   **Caching**: Caching patterns (Cache-Aside, Write-Through, Write-Behind), Eviction policies (LRU, LFU, FIFO), and distributed caches like Redis & Memcached.
-*   **Content Delivery Networks (CDNs)**: Push vs. Pull CDNs, Edge caching.
+*   [System Design Basics](./2-system-design-basics/2.1-system-design-basics.md)
+*   [Key Characteristics of Distributed Systems](./2-system-design-basics/2.2-key-characteristics-of-distributed-systems.md)
+*   [Load Balancing](./2-system-design-basics/2.3-load-balancing.md)
+*   [Load Balancing Algorithms](./2-system-design-basics/2.4-load-balancing-algorithms.md)
+*   [Caching](./2-system-design-basics/2.5-caching.md)
+*   [Data Partitioning](./2-system-design-basics/2.6-data-partitioning.md)
+*   [Indexes](./2-system-design-basics/2.7-indexes.md)
+*   [Proxies](./2-system-design-basics/2.8-proxies.md)
+*   [Redundancy and Replication](./2-system-design-basics/2.9-redundancy-and-replication.md)
 
 <!-- ### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
