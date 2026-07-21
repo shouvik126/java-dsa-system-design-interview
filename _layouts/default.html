@@ -212,26 +212,42 @@
         {% elsif page.url contains '/Java/' %}
         <div class="sidebar-section">
           <h3 class="sidebar-heading">
-            <a href="{{ '/Java/' | relative_url }}" class="{% if page.url == '/Java/' %}active{% endif %}">
+            <a href="{{ '/Java/' | relative_url }}"
+              class="{% if page.url == '/Java/' %}active{% endif %}">
               Java Knowledge System
             </a>
           </h3>
-          <!--<ul class="sidebar-tree">
+          <ul class="sidebar-tree">
             <li class="tree-group">
               <div class="group-header">
-                <span class="group-title">1. Core Java & System</span>
+                <span class="group-title">1. Basics</span>
                 <span class="group-toggle-icon"><i class="fas fa-chevron-down"></i></span>
               </div>
               <ul class="sub-tree">
                 <li>
-                  <a href="{{ '/Java/' | relative_url }}"
-                    class="{% if page.url == '/Java/' %}active-link{% endif %}">
-                    Java Knowledge System Overview
+                  <a href="{{ '/Java/1-basics/1-basics/' | relative_url }}"
+                    class="{% if page.url contains '1-basics' %}active-link{% endif %}">
+                    Java Basics Guide
                   </a>
                 </li>
               </ul>
             </li>
-          </ul>-->
+            <li class="tree-group disabled-group">
+              <span class="group-title">2. Collections <span class="badge">Soon</span></span>
+            </li>
+            <li class="tree-group disabled-group">
+              <span class="group-title">3. Concurrency <span class="badge">Soon</span></span>
+            </li>
+            <li class="tree-group disabled-group">
+              <span class="group-title">4. JVM <span class="badge">Soon</span></span>
+            </li>
+            <li class="tree-group disabled-group">
+              <span class="group-title">5. IO <span class="badge">Soon</span></span>
+            </li>
+            <li class="tree-group disabled-group">
+              <span class="group-title">6. New Features <span class="badge">Soon</span></span>
+            </li>
+          </ul>
         </div>
         {% elsif page.url contains '/Spring-Boot/' %}
         <div class="sidebar-section">
