@@ -814,6 +814,16 @@ a:hover {
   gap: 0.5rem;
 }
 
+.topic-card-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.topic-card-title a:hover {
+  color: var(--brand-color);
+}
+
 .topic-card-description {
   font-size: 0.9rem;
   color: var(--text-secondary);

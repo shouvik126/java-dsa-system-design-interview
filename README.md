@@ -15,14 +15,14 @@ Welcome to the ultimate repository and resource hub for Java Backend, Data Struc
 Select a module below to start preparing:
 
 <div class="topic-grid">
-  <a href="./System-Design/" class="topic-card">
+  <div class="topic-card">
     <div class="topic-card-icon"><i class="fas fa-desktop"></i></div>
     <div class="topic-card-content">
-      <h3 class="topic-card-title">System Design</h3>
+      <h3 class="topic-card-title"><a href="./System-Design/System-Design.md">System Design</a></h3>
       <p class="topic-card-description">Learn how to design highly scalable, available, and reliable distributed systems. Master load balancing, caching, database partitioning, consistency models, and microservices.</p>
-      <span class="topic-card-link">Go to System Design Guide <i class="fas fa-arrow-right"></i></span>
+      <a href="./System-Design/System-Design.md" class="topic-card-link">Go to System Design Guide <i class="fas fa-arrow-right"></i></a>
     </div>
-  </a>
+  </div>
 
   <div class="topic-card disabled">
     <div class="topic-card-icon"><i class="fab fa-java"></i></div>
@@ -53,7 +53,7 @@ Select a module below to start preparing:
 
 ## 🚀 How to Use This Resource
 
-1.  **Read the Guides**: Navigate to the specific topic pages (e.g., the [System Design](./System-Design/) guide) to review theory, architectures, and design patterns.
+1.  **Read the Guides**: Navigate to the specific topic pages (e.g., the [System Design](./System-Design/System-Design.md) guide) to review theory, architectures, and design patterns.
 2.  **Practice System Design**: Apply the 5-step framework detailed in the System Design guide to design real-world systems (e.g., URL shortener, Uber, Web crawler).
 3.  **Contribute**: If you find bugs, typos, or want to add new interview questions/patterns, feel free to open a Pull Request!
 
