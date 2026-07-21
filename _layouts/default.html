@@ -108,25 +108,25 @@
               </div>
               <ul class="sub-tree">
                 <li>
-                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/' | relative_url }}"
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/1.1-why-system-design-interview/' | relative_url }}"
                     class="{% if page.url contains 'why-system-design-interview' %}active-link{% endif %}">
                     Why System Design Interview
                   </a>
                 </li>
                 <li>
-                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/functional-vs-non-functional-requirements/' | relative_url }}"
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/1.2-functional-vs-non-functional-requirements/' | relative_url }}"
                     class="{% if page.url contains 'functional-vs-non-functional-requirements' %}active-link{% endif %}">
                     Functional vs. Non-Functional Requirements
                   </a>
                 </li>
                 <li>
-                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/back-of-the-envelope-estimations/' | relative_url }}"
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/1.3-back-of-the-envelope-estimations/' | relative_url }}"
                     class="{% if page.url contains 'back-of-the-envelope-estimations' %}active-link{% endif %}">
                     Back-of-the-Envelope Estimations
                   </a>
                 </li>
                 <li>
-                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/things-to-avoid-during-system-design-interview/' | relative_url }}"
+                  <a href="{{ '/System-Design/1-introduction-to-system-design-interview/1.4-things-to-avoid-during-system-design-interview/' | relative_url }}"
                     class="{% if page.url contains 'things-to-avoid-during-system-design-interview' %}active-link{% endif %}">
                     Things to Avoid During System Design Interview
                   </a>
@@ -290,7 +290,7 @@
     });
 
     // Render Mermaid diagrams compiled by Kramdown
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const codeBlocks = document.querySelectorAll("pre code.language-mermaid, pre.language-mermaid, div.language-mermaid pre");
       codeBlocks.forEach(block => {
         const rawCode = block.textContent.trim();
@@ -298,24 +298,24 @@
         mermaidDiv.className = "mermaid";
         mermaidDiv.setAttribute('data-original-code', rawCode);
         mermaidDiv.textContent = rawCode;
-        
+
         let parentToReplace = block;
         if (block.tagName === 'CODE') {
           parentToReplace = block.parentElement; // pre
         }
-        
+
         // If Kramdown wraps it in outer divs (.highlighter-rouge, etc.)
         if (parentToReplace.parentElement && parentToReplace.parentElement.classList.contains('highlight')) {
           parentToReplace = parentToReplace.parentElement.parentElement;
         }
-        
+
         parentToReplace.parentElement.replaceChild(mermaidDiv, parentToReplace);
       });
 
       // Initialize Mermaid
       if (typeof mermaid !== 'undefined') {
-        mermaid.initialize({ 
-          startOnLoad: true, 
+        mermaid.initialize({
+          startOnLoad: true,
           theme: document.documentElement.classList.contains('dark-theme') ? 'dark' : 'default',
           securityLevel: 'loose'
         });
@@ -348,7 +348,7 @@
               chart.textContent = originalCode;
             }
           });
-          mermaid.initialize({ 
+          mermaid.initialize({
             theme: isDark ? 'dark' : 'default',
             securityLevel: 'loose'
           });
