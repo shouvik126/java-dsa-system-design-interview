@@ -42,7 +42,7 @@ This **Java Knowledge System** is designed for Java backend developers preparing
 
 ## 🗺️ Recommended Learning Roadmap
 
-1. **[Core Java Basics](./basis/)**: Master fundamental syntax, OOP principles, Generics, Reflection, Dynamic Proxies, and Serialization.
+1. **[Core Java Basics](./1-basics/1-basics.md)**: Master fundamental syntax, OOP principles, Generics, Reflection, Dynamic Proxies, and Serialization.
 2. **[Java Collections](./collection/)**: Understand internal mechanics and design trade-offs of containers like `ArrayList`, `LinkedList`, `HashMap`, and `ConcurrentHashMap`.
 3. **[Java Concurrency](./concurrent/)**: Study thread lifecycles, synchronization locks, JMM, CAS, AQS, Thread Pools, and concurrency utilities.
 4. **[JVM Architecture](./jvm/)**: Deep dive into memory regions, Class Loaders, Garbage Collectors, JVM tuning flags, and troubleshooting tools.
@@ -55,13 +55,13 @@ This **Java Knowledge System** is designed for Java backend developers preparing
 
 ### Core Java Basics
 
-* **[Java Basics Guide](./basis/)**: Comprehensive introduction covering core mechanics and common interview questions.
-* **[Java Basics Interview Q&A (Part 1)](./basis/java-basic-questions-01.md)**: Language features, basic syntax, OOP fundamentals, and standard library classes.
-* **[Java Basics Interview Q&A (Part 2)](./basis/java-basic-questions-02.md)**: Exception handling, Generics, Reflection, Annotations, and edge cases.
-* **[Java Basics Interview Q&A (Part 3)](./basis/java-basic-questions-03.md)**: Advanced Java features and common technical pitfalls.
-* **[Pass-by-Value in Java Explained](./basis/why-there-only-value-passing-in-java.md)**: Clarifies pass-by-value semantics, reference variables, and object mutation.
-* **[Java Serialization Guide](./basis/serialization.md)**: Serialization protocol, `serialVersionUID`, security implications, and modern alternatives.
-* **[Java Reflection Mechanism](./basis/reflection.md)** & **[Java Proxy Pattern](./basis/proxy.md)**: Fundamental design concepts behind Java frameworks.
+* **[Java Basics Guide](./1-basics/1-basics.md)**: Comprehensive introduction covering core mechanics and common interview questions.
+* **[Java Basics Interview Q&A (Part 1)](./1-basics/java-basic-questions-01.md)**: Language features, basic syntax, OOP fundamentals, and standard library classes.
+* **[Java Basics Interview Q&A (Part 2)](./1-basics/java-basic-questions-02.md)**: Exception handling, Generics, Reflection, Annotations, and edge cases.
+* **[Java Basics Interview Q&A (Part 3)](./1-basics/java-basic-questions-03.md)**: Advanced Java features and common technical pitfalls.
+* **[Pass-by-Value in Java Explained](./1-basics/why-there-only-value-passing-in-java.md)**: Clarifies pass-by-value semantics, reference variables, and object mutation.
+* **[Java Serialization Guide](./1-basics/serialization.md)**: Serialization protocol, `serialVersionUID`, security implications, and modern alternatives.
+* **[Java Reflection Mechanism](./1-basics/reflection.md)** & **[Java Proxy Pattern](./1-basics/proxy.md)**: Fundamental design concepts behind Java frameworks.
 
 ---
 
