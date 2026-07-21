@@ -3,7 +3,7 @@ layout: default
 title: System Design Guide
 permalink: /System-Design/
 next_title: "Why System Design Interview"
-next_url: "/System-Design/1-introduction-to-system-design-interview/why-system-design-interview/"
+next_url: "/System-Design/1-introduction-to-system-design-interview/1.1-why-system-design-interview/"
 ---
 
 # System Design Interview Preparation
