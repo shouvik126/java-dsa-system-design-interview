@@ -35,6 +35,9 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Indexes](./2-system-design-basics/2.7-indexes.md)
 *   [Proxies](./2-system-design-basics/2.8-proxies.md)
 *   [Redundancy and Replication](./2-system-design-basics/2.9-redundancy-and-replication.md)
+*   [SQL vs. NoSQL](./2-system-design-basics/2.10-sql-vs-nosql.md)
+*   [CAP Theorem](./2-system-design-basics/2.11-cap-theorem.md)
+*   [PACELC Theorem](./2-system-design-basics/2.12-pacelec-theorem.md)
 
 <!-- ### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
