@@ -86,12 +86,71 @@
     </button>
   </div>
 
+  <!-- Mobile Category Navigation Bar -->
+  <div class="mobile-category-bar">
+    <div class="mobile-category-scroll">
+      <a href="{{ '/' | relative_url }}" class="mobile-cat-item {% if page.url == '/' %}active{% endif %}">
+        Home
+      </a>
+      <a href="{{ '/System-Design/' | relative_url }}"
+        class="mobile-cat-item {% if page.url contains '/System-Design/' %}active{% endif %}">
+        System Design
+      </a>
+      <a href="{{ '/Java/' | relative_url }}"
+        class="mobile-cat-item {% if page.url contains '/Java/' %}active{% endif %}">
+        Java
+      </a>
+      <a href="#" class="mobile-cat-item disabled">
+        Spring Boot <span class="badge" style="font-size:0.6rem; margin-left:2px;">Soon</span>
+      </a>
+      <a href="#" class="mobile-cat-item disabled">
+        DSA <span class="badge" style="font-size:0.6rem; margin-left:2px;">Soon</span>
+      </a>
+    </div>
+  </div>
+
   <!-- Layout Container -->
   <div class="layout-container{% unless show_sidebar %} no-sidebar{% endunless %}">
     <!-- Left Sidebar (Tree Navigation) -->
     {% if show_sidebar %}
     <aside class="sidebar" id="sidebarMenu">
       <nav class="sidebar-nav">
+        <!-- Mobile Main Navigation Section (visible only on mobile) -->
+        <div class="sidebar-section mobile-only-section">
+          <h3 class="sidebar-heading">Navigation</h3>
+          <ul class="sidebar-tree">
+            <li class="tree-group">
+              <ul class="sub-tree static-tree">
+                <li>
+                  <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active-link{% endif %}">
+                    <i class="fas fa-home me-1"></i> Home
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ '/System-Design/' | relative_url }}" class="{% if page.url contains '/System-Design/' %}active-link{% endif %}">
+                    <i class="fas fa-cubes me-1"></i> System Design
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ '/Java/' | relative_url }}" class="{% if page.url contains '/Java/' %}active-link{% endif %}">
+                    <i class="fab fa-java me-1"></i> Java
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="disabled-link">
+                    <i class="fas fa-leaf me-1"></i> Spring Boot <span class="badge">Soon</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="disabled-link">
+                    <i class="fas fa-code me-1"></i> DSA <span class="badge">Soon</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
         {% if page.url contains '/System-Design/' %}
         <div class="sidebar-section">
           <h3 class="sidebar-heading">

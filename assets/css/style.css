@@ -245,6 +245,79 @@ a:hover {
   max-width: 60%;
 }
 
+/* Mobile Category Bar (Top sub-nav) */
+.mobile-category-bar {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background-color: var(--bg-navbar);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 98;
+  padding: 0 0.75rem;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.mobile-category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-category-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-cat-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-radius: 20px;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.mobile-cat-item:hover,
+.mobile-cat-item.active {
+  color: var(--brand-color);
+  background-color: var(--bg-card-hover);
+  font-weight: 600;
+}
+
+.mobile-cat-item.disabled {
+  color: var(--text-muted);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.mobile-only-section {
+  display: none;
+}
+
+.sub-tree.static-tree {
+  display: flex !important;
+  max-height: none !important;
+  opacity: 1 !important;
+}
+
+.disabled-link {
+  color: var(--text-muted) !important;
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: default;
+}
+
 /* ==========================================================================
    LAYOUT GRID CONTAINER
    ========================================================================== */
@@ -713,17 +786,28 @@ a:hover {
     display: flex;
   }
 
+  .mobile-category-bar {
+    display: flex;
+  }
+
+  .mobile-only-section {
+    display: block;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
   .layout-container {
-    margin-top: 56px;
-    min-height: calc(100vh - 56px);
+    margin-top: 100px;
+    min-height: calc(100vh - 100px);
   }
 
   /* Slide-in sidebar drawer */
   .sidebar {
     width: 280px;
-    height: calc(100vh - 56px);
+    height: calc(100vh - 100px);
     position: fixed;
-    top: 56px;
+    top: 100px;
     left: -280px;
     z-index: 99;
     box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
