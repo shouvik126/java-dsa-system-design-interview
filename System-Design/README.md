@@ -38,6 +38,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [SQL vs. NoSQL](./2-system-design-basics/2.10-sql-vs-nosql.md)
 *   [CAP Theorem](./2-system-design-basics/2.11-cap-theorem.md)
 *   [PACELC Theorem](./2-system-design-basics/2.12-pacelec-theorem.md)
+*   [Consistent Hashing](./2-system-design-basics/2.13-consistent-hashing.md)
 
 <!-- ### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
