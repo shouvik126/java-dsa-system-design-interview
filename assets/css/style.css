@@ -233,6 +233,21 @@ a:hover {
   font-size: 1.25rem;
   cursor: pointer;
   padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobile-btn:hover {
+  color: var(--text-primary);
+}
+
+.mobile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
 }
 
 .mobile-logo {
@@ -242,7 +257,7 @@ a:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 60%;
+  max-width: 55%;
 }
 
 /* Mobile Category Bar (Top sub-nav) */
