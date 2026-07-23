@@ -301,23 +301,6 @@ a:hover {
   pointer-events: none;
 }
 
-.mobile-only-section {
-  display: none !important;
-}
-
-.sub-tree.static-tree {
-  display: flex !important;
-  max-height: none !important;
-  opacity: 1 !important;
-}
-
-.disabled-link {
-  color: var(--text-muted) !important;
-  opacity: 0.6;
-  pointer-events: none;
-  cursor: default;
-}
-
 /* ==========================================================================
    LAYOUT GRID CONTAINER
    ========================================================================== */
@@ -788,13 +771,6 @@ a:hover {
 
   .mobile-category-bar {
     display: flex;
-  }
-
-  .mobile-only-section {
-    display: block !important;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--border-color);
   }
 
   .layout-container {
