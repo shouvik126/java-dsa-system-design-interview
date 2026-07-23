@@ -302,7 +302,7 @@ a:hover {
 }
 
 .mobile-only-section {
-  display: none;
+  display: none !important;
 }
 
 .sub-tree.static-tree {
@@ -791,7 +791,7 @@ a:hover {
   }
 
   .mobile-only-section {
-    display: block;
+    display: block !important;
     margin-bottom: 1.25rem;
     padding-bottom: 1.25rem;
     border-bottom: 1px solid var(--border-color);
