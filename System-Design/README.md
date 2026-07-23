@@ -39,6 +39,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [CAP Theorem](./2-system-design-basics/2.11-cap-theorem.md)
 *   [PACELC Theorem](./2-system-design-basics/2.12-pacelec-theorem.md)
 *   [Consistent Hashing](./2-system-design-basics/2.13-consistent-hashing.md)
+*   [Long-Polling vs WebSockets vs Server-Sent Events](./2-system-design-basics/2.14-long-polling-vs-webSockets-vs-server-sent-events.md)
 
 <!-- ### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
