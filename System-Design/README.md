@@ -40,6 +40,9 @@ To help you prepare systematically, the content is organized into key focus area
 *   [PACELC Theorem](./2-system-design-basics/2.12-pacelec-theorem.md)
 *   [Consistent Hashing](./2-system-design-basics/2.13-consistent-hashing.md)
 *   [Long-Polling vs WebSockets vs Server-Sent Events](./2-system-design-basics/2.14-long-polling-vs-webSockets-vs-server-sent-events.md)
+*   [Bloom Filters](./2-system-design-basics/2.15-bloom-filters.md)
+*   [Quorum](./2-system-design-basics/2.16-quorum.md)
+*   [Leader and Follower](./2-system-design-basics/2.17-leader-and-follower.md)
 
 <!-- ### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
