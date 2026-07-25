@@ -49,6 +49,8 @@ To help you prepare systematically, the content is organized into key focus area
 
 ### 3. System Design Trade-offs
 *   [Importance of Discussing Trade-offs](./3-system-design-trade-offs/3.1-Importance-of-discussing-trade-offs.md)
+*   [Strong vs. Eventual Consistency](./3-system-design-trade-offs/3.2-strong-vs-eventual-consistency.md)
+*   [Latency vs. Throughput](./3-system-design-trade-offs/3.3-latency-vs-throughput.md)
 
 ### 4. System Design Problems
 *   **APIs**: REST, GraphQL, and gRPC.
