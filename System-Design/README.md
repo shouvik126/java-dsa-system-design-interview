@@ -45,6 +45,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Leader and Follower](./2-system-design-basics/2.17-leader-and-follower.md)
 *   [Heartbeat](./2-system-design-basics/2.18-heartbeat.md)
 *   [Checksum](./2-system-design-basics/2.19-checksum.md)
+*    Quiz
 
 <!-- ### 3. System Design Trade-offs
 *   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.

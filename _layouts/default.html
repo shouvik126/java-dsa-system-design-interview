@@ -301,21 +301,25 @@
                     Checksum
                   </a>
                 </li>
+                <li>
+                  <a href="#" class="{% if page.url contains 'quiz' %}active-link{% endif %}">
+                    Quiz<span class="badge">Soon</span>
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="tree-group disabled-group">
-              <span class="group-title">3. Trade-offs <span class="badge">Soon</span></span>
+              <span class="group-title">3. System Design Trade-offs <span class="badge">Soon</span></span>
             </li>
             <li class="tree-group disabled-group">
-              <span class="group-title">4. Problems <span class="badge">Soon</span></span>
+              <span class="group-title">4. System Design Problems <span class="badge">Soon</span></span>
             </li>
           </ul>
         </div>
         {% elsif page.url contains '/Java/' %}
         <div class="sidebar-section">
           <h3 class="sidebar-heading">
-            <a href="{{ '/Java/' | relative_url }}"
-              class="{% if page.url == '/Java/' %}active{% endif %}">
+            <a href="{{ '/Java/' | relative_url }}" class="{% if page.url == '/Java/' %}active{% endif %}">
               Java Knowledge System
             </a>
           </h3>
