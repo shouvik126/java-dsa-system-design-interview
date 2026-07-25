@@ -47,10 +47,8 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Checksum](./2-system-design-basics/2.19-checksum.md)
 *    Quiz
 
-<!-- ### 3. System Design Trade-offs
-*   **SQL vs. NoSQL**: Choosing the right database paradigm for your use case.
-*   **Database Scaling**: Replication (Leader-Follower, Leader-Leader), Partitioning/Sharding (Consistent Hashing), and Federation.
-*   **Indexes**: B-Trees, LSM-Trees, and database indexing strategies.
+### 3. System Design Trade-offs
+*   [Importance of Discussing Trade-offs](./3-system-design-trade-offs/3.1-Importance-of-discussing-trade-offs.md)
 
 ### 4. System Design Problems
 *   **APIs**: REST, GraphQL, and gRPC.
