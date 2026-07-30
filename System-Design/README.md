@@ -53,6 +53,11 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Latency vs. Throughput](./3-system-design-trade-offs/3.3-latency-vs-throughput.md)
 *   [ACID vs. BASE Properties in Databases](./3-system-design-trade-offs/3.4-acid-vs-base-properties-in-databases.md)
 *   [Read-Through vs. Write-Through Cache](./3-system-design-trade-offs/3.5-read-through-vs-write-through-cache.md)
+*   [Batch Processing vs. Stream Processing](./3-system-design-trade-offs/3.6-batch-processing-vs-stream-processing.md)
+*   [Load Balancer vs. API Gateway](./3-system-design-trade-offs/3.7-load-balancer-vs-api-gateway.md)
+*   [API Gateway vs. Direct Service Exposure](./3-system-design-trade-offs/3.8-api-gateway-vs-direct-service-exposure.md)
+*   [Proxy vs. Reverse Proxy](./3-system-design-trade-offs/3.9-proxy-vs-reverse-proxy.md)
+*   [API Gateway vs. Reverse Proxy](./3-system-design-trade-offs/3.10-api-gateway-vs-reverse-proxy.md)
 
 ### 4. System Design Problems
 *   **APIs**: REST, GraphQL, and gRPC.
