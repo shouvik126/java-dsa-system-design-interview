@@ -58,6 +58,11 @@ To help you prepare systematically, the content is organized into key focus area
 *   [API Gateway vs. Direct Service Exposure](./3-system-design-trade-offs/3.8-api-gateway-vs-direct-service-exposure.md)
 *   [Proxy vs. Reverse Proxy](./3-system-design-trade-offs/3.9-proxy-vs-reverse-proxy.md)
 *   [API Gateway vs. Reverse Proxy](./3-system-design-trade-offs/3.10-api-gateway-vs-reverse-proxy.md)
+*   [SQL vs. NoSQL](./3-system-design-trade-offs/3.11-sql-vs-nosql.md)
+*   [Primary-Replica vs. Peer-to-Peer Replication](./3-system-design-trade-offs/3.12-primary-replica-vs-peer-to-peer-replication.md)
+*   [Data Compression vs. Data Deduplication](./3-system-design-trade-offs/3.13-data-compression-vs-data-deduplication.md)
+*   [Server-Side Caching vs. Client-Side Caching](./3-system-design-trade-offs/3.14-server-side-caching-vs-client-side-caching.md)
+*   [REST vs. RPC](./3-system-design-trade-offs/3.15-rest-vs-rpc.md)
 
 ### 4. System Design Problems
 *   **APIs**: REST, GraphQL, and gRPC.
