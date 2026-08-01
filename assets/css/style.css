@@ -31,25 +31,25 @@
    DARK THEME OVERRIDES
    ========================================================================== */
 .dark-theme {
-  --bg-color: #0b0f19;             /* Space Navy */
-  --bg-content: #111827;           /* Slate 900 */
-  --bg-sidebar: #070a13;           /* Deeper Space Navy */
-  --bg-navbar: rgba(11, 15, 25, 0.8);
-  --border-color: #1e293b;         /* Slate 800 */
-  --text-primary: #f8fafc;         /* Slate 50 */
-  --text-secondary: #cbd5e1;       /* Slate 300 */
-  --text-muted: #64748b;           /* Slate 500 */
+  --bg-color: #1c2128;             /* Soft dark blue-grey (GitHub Dimmed canvas) */
+  --bg-content: #22272e;           /* Slightly lighter card surface */
+  --bg-sidebar: #161b22;           /* Sidebar — one shade darker than canvas */
+  --bg-navbar: rgba(28, 33, 40, 0.85);
+  --border-color: #373e47;         /* Visible but not harsh border */
+  --text-primary: #cdd9e5;         /* Off-white — comfortable on dark bg */
+  --text-secondary: #adbac7;       /* Muted blue-grey — body copy */
+  --text-muted: #768390;           /* Soft grey — secondary labels */
   
-  --brand-color: #6366f1;          /* Indigo 500 */
-  --brand-hover: #818cf8;          /* Indigo 400 */
-  --brand-light: #1e1b4b;          /* Deep Indigo Background */
-  --brand-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  --brand-glow: rgba(99, 102, 241, 0.2);
+  --brand-color: #7d97f4;          /* Soft periwinkle — readable on dark */
+  --brand-hover: #a2b8fb;          /* Lighter on hover */
+  --brand-light: #1e2a3a;          /* Subtle tinted highlight bg */
+  --brand-gradient: linear-gradient(135deg, #7d97f4 0%, #b07af9 100%);
+  --brand-glow: rgba(125, 151, 244, 0.15);
   
-  --code-bg: rgba(99, 102, 241, 0.1);
-  --code-color: #a5b4fc;
-  --blockquote-bg: #111827;
-  --blockquote-border: #1e293b;
+  --code-bg: rgba(125, 151, 244, 0.08);
+  --code-color: #aac8f5;           /* Soft blue code text */
+  --blockquote-bg: #2d333b;        /* Warm dark grey blockquote */
+  --blockquote-border: #444c56;
 }
 
 /* ==========================================================================
