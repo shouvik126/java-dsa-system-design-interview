@@ -63,6 +63,13 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Data Compression vs. Data Deduplication](./3-system-design-trade-offs/3.13-data-compression-vs-data-deduplication.md)
 *   [Server-Side Caching vs. Client-Side Caching](./3-system-design-trade-offs/3.14-server-side-caching-vs-client-side-caching.md)
 *   [REST vs. RPC](./3-system-design-trade-offs/3.15-rest-vs-rpc.md)
+*   [Polling vs. Long-Polling vs. WebSockets vs. Webhooks](./3-system-design-trade-offs/3.16-polling-vs-long-polling-vs-websockets-vs-webhooks.md)
+*   [CDN Usage vs. Direct Server Serving](./3-system-design-trade-offs/3.17-cdn-usage-vs-direct-server-serving.md)
+*   [Serverless Architecture vs. Traditional Server-Based](./3-system-design-trade-offs/3.18-serverless-architecture-vs-traditional-server-based.md)
+*   [Stateful vs. Stateless Architecture](./3-system-design-trade-offs/3.19-stateful-vs-stateless-architecture.md)
+*   [Token Bucket vs. Leaky Bucket](./3-system-design-trade-offs/3.20-token-bucket-vs-leaky-bucket.md)
+*   [Read-Heavy vs. Write-Heavy System](./3-system-design-trade-offs/3.21-read-heavy-vs-write-heavy-system.md)
+*    Quiz
 
 ### 4. System Design Problems
 *   **APIs**: REST, GraphQL, and gRPC.
