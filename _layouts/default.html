@@ -77,6 +77,21 @@
           title="View on GitHub">
           <i class="fab fa-github"></i> <span>GitHub</span>
         </a>
+        <!-- Font Size Picker -->
+        <div class="font-size-picker" aria-label="Font Size">
+          <button class="font-size-btn" aria-haspopup="true" aria-label="Change font size">Aa</button>
+          <div class="font-size-dropdown" role="menu">
+            <button class="font-size-option" data-size="small" role="menuitem">
+              <span class="fs-label">Small</span><span class="fs-preview">14px</span>
+            </button>
+            <button class="font-size-option" data-size="medium" role="menuitem">
+              <span class="fs-label">Medium</span><span class="fs-preview">16px</span>
+            </button>
+            <button class="font-size-option" data-size="large" role="menuitem">
+              <span class="fs-label">Large</span><span class="fs-preview">18px</span>
+            </button>
+          </div>
+        </div>
         <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Theme">
           <i class="fas fa-moon"></i>
         </button>
@@ -99,6 +114,21 @@
         title="View on GitHub" aria-label="View on GitHub">
         <i class="fab fa-github"></i>
       </a>
+      <!-- Font Size Picker (mobile) -->
+      <div class="font-size-picker" aria-label="Font Size">
+        <button class="font-size-btn mobile-btn" style="border:1px solid var(--border-color);" aria-haspopup="true" aria-label="Change font size">Aa</button>
+        <div class="font-size-dropdown" role="menu">
+          <button class="font-size-option" data-size="small" role="menuitem">
+            <span class="fs-label">Small</span><span class="fs-preview">14px</span>
+          </button>
+          <button class="font-size-option" data-size="medium" role="menuitem">
+            <span class="fs-label">Medium</span><span class="fs-preview">16px</span>
+          </button>
+          <button class="font-size-option" data-size="large" role="menuitem">
+            <span class="fs-label">Large</span><span class="fs-preview">18px</span>
+          </button>
+        </div>
+      </div>
       <button id="themeToggleMobile" class="mobile-btn" aria-label="Toggle Dark Theme">
         <i class="fas fa-moon"></i>
       </button>
@@ -383,6 +413,31 @@
 
     if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
     if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', toggleTheme);
+
+    // -------------------------------------------------------------------------
+    // Font Size Picker
+    // -------------------------------------------------------------------------
+    const FONT_SIZES = ['small', 'medium', 'large'];
+    const FONT_CLASSES = FONT_SIZES.map(s => 'font-' + s);
+
+    function applyFontSize(size) {
+      document.body.classList.remove(...FONT_CLASSES);
+      document.body.classList.add('font-' + size);
+      // Mark active option across ALL pickers on the page
+      document.querySelectorAll('.font-size-option').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.size === size);
+      });
+      localStorage.setItem('fontSize', size);
+    }
+
+    // Apply saved preference on load (default: medium)
+    const savedFontSize = localStorage.getItem('fontSize') || 'medium';
+    applyFontSize(savedFontSize);
+
+    // Wire up all font-size option buttons
+    document.querySelectorAll('.font-size-option').forEach(btn => {
+      btn.addEventListener('click', () => applyFontSize(btn.dataset.size));
+    });
   </script>
 </body>
 
