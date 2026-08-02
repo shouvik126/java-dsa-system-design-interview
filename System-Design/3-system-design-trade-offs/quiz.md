@@ -3,10 +3,10 @@ layout: default
 title: System Design Trade-offs Quiz
 permalink: /System-Design/3-system-design-trade-offs/quiz/
 prev_title: "Read-Heavy vs. Write-Heavy System"
-prev_url: "/System-Design/3-system-design-trade-offs/3.22-read-heavy-vs-write-heavy-system/"
+prev_url: "/System-Design/3-system-design-trade-offs/3.23-read-heavy-vs-write-heavy-system/"
 ---
 
-# System Design Trade-offs Quiz (Modules 3.1 - 3.22)
+# System Design Trade-offs Quiz (Modules 3.1 - 3.23)
 
 Test and reinforce your architectural trade-off knowledge with **35 System Design Interview scenario questions** covering modules 3.1 to 3.21.
 
@@ -766,7 +766,7 @@ const quizQuestions = [
   },
   {
     id: 25,
-    topic: "3.17 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
+    topic: "3.18 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
     question: "A real-time online collaborative whiteboard app requires full-duplex, bi-directional, ultra-low latency interaction between hundreds of concurrent clients and the server over a single persistent TCP connection. Which technology is required?",
     options: {
       A: "Short Polling every 5 seconds",
@@ -784,7 +784,7 @@ const quizQuestions = [
   },
   {
     id: 26,
-    topic: "3.17 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
+    topic: "3.18 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
     question: "A payment gateway (e.g. Stripe) needs to inform an external merchant backend server whenever a customer successfully completes a payment asynchronously hours after checkout. What is the standard event-driven pattern?",
     options: {
       A: "Stripe short-polls the merchant server every 2 seconds.",
@@ -802,7 +802,7 @@ const quizQuestions = [
   },
   {
     id: 27,
-    topic: "3.17 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
+    topic: "3.18 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
     question: "What is the primary operational problem with Short Polling (e.g., client asking `/checkStatus` every 1 second) in a high-scale system?",
     options: {
       A: "It requires persistent open socket handles on the load balancer.",
@@ -820,7 +820,7 @@ const quizQuestions = [
   },
   {
     id: 28,
-    topic: "3.18 CDN Usage vs. Direct Server Serving",
+    topic: "3.19 CDN Usage vs. Direct Server Serving",
     question: "A media streaming platform serves static 4K video segments to millions of users spread across Asia, Europe, and America. Serving all video traffic directly from a central AWS us-east-1 origin server results in high latency for Asian users. How does a Content Delivery Network (CDN) solve this?",
     options: {
       A: "By re-encoding video files into smaller ZIP archives automatically.",
@@ -838,7 +838,7 @@ const quizQuestions = [
   },
   {
     id: 29,
-    topic: "3.19 Serverless Architecture vs. Traditional Server-Based",
+    topic: "3.20 Serverless Architecture vs. Traditional Server-Based",
     question: "A startup builds an image processing microservice that runs only 50 times per day on average, but occasionally bursts to 5,000 invocations during marketing campaigns. Idle periods can last for hours. Which deployment model minimizes cost?",
     options: {
       A: "Provisioning a cluster of 4 dedicated AWS EC2 instances running 24/7.",
@@ -856,7 +856,7 @@ const quizQuestions = [
   },
   {
     id: 30,
-    topic: "3.19 Serverless Architecture vs. Traditional Server-Based",
+    topic: "3.20 Serverless Architecture vs. Traditional Server-Based",
     question: "What is a major architectural downside of Serverless Functions (e.g. AWS Lambda) for ultra-low latency, persistent connection applications?",
     options: {
       A: "Serverless functions cannot process JSON data.",
@@ -874,7 +874,7 @@ const quizQuestions = [
   },
   {
     id: 31,
-    topic: "3.20 Stateful vs. Stateless Architecture",
+    topic: "3.21 Stateful vs. Stateless Architecture",
     question: "You are designing an auto-scaling REST API layer behind a Round-Robin Load Balancer. To ensure that ANY user request can be handled by ANY backend instance seamlessly, how should user session state be managed?",
     options: {
       A: "Store session data in the local RAM memory of the specific backend instance that logged the user in.",
@@ -892,7 +892,7 @@ const quizQuestions = [
   },
   {
     id: 32,
-    topic: "3.20 Stateful vs. Stateless Architecture",
+    topic: "3.21 Stateful vs. Stateless Architecture",
     question: "Which of the following application types INHERENTLY requires a Stateful Architecture?",
     options: {
       A: "A public RESTful weather reporting API.",
@@ -910,7 +910,7 @@ const quizQuestions = [
   },
   {
     id: 33,
-    topic: "3.21 Token Bucket vs. Leaky Bucket",
+    topic: "3.22 Token Bucket vs. Leaky Bucket",
     question: "An API Rate Limiter must allow applications to process short traffic bursts (e.g. 50 requests arriving at once in 10ms) provided the average request rate over a minute stays under limit. Which algorithm supports bursty traffic?",
     options: {
       A: "Leaky Bucket Algorithm",
@@ -928,7 +928,7 @@ const quizQuestions = [
   },
   {
     id: 34,
-    topic: "3.21 Token Bucket vs. Leaky Bucket",
+    topic: "3.22 Token Bucket vs. Leaky Bucket",
     question: "A rate limiter protects a legacy backend service that crashes if it receives traffic spikes exceeding exactly 100 requests per second. The outgoing flow to the legacy backend MUST be completely smooth and constant. Which algorithm should be chosen?",
     options: {
       A: "Token Bucket Algorithm",
@@ -946,7 +946,7 @@ const quizQuestions = [
   },
   {
     id: 35,
-    topic: "3.22 Read-Heavy vs. Write-Heavy System",
+    topic: "3.23 Read-Heavy vs. Write-Heavy System",
     question: "An IoT monitoring system ingests 3,000,000 log metrics per second. Standard B-Tree indexes on relational databases are causing severe disk random I/O write bottlenecks. Which storage engine data structure trade-off solves high write ingestion?",
     options: {
       A: "B+ Tree Indexes with heavy random write page splitting.",
