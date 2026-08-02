@@ -3,10 +3,10 @@ layout: default
 title: System Design Trade-offs Quiz
 permalink: /System-Design/3-system-design-trade-offs/quiz/
 prev_title: "Read-Heavy vs. Write-Heavy System"
-prev_url: "/System-Design/3-system-design-trade-offs/3.21-read-heavy-vs-write-heavy-system/"
+prev_url: "/System-Design/3-system-design-trade-offs/3.22-read-heavy-vs-write-heavy-system/"
 ---
 
-# System Design Trade-offs Quiz (Modules 3.1 - 3.21)
+# System Design Trade-offs Quiz (Modules 3.1 - 3.22)
 
 Test and reinforce your architectural trade-off knowledge with **35 System Design Interview scenario questions** covering modules 3.1 to 3.21.
 
@@ -424,7 +424,7 @@ const quizQuestions = [
   },
   {
     id: 6,
-    topic: "3.4 ACID vs. BASE Properties in Databases",
+    topic: "3.5 ACID vs. BASE Properties in Databases",
     question: "Which database property guarantee ensures that if a multi-step financial transaction fails on step 4 of 5, all previous changes are completely rolled back as if the transaction never occurred?",
     options: {
       A: "Atomicity (ACID)",
@@ -442,7 +442,7 @@ const quizQuestions = [
   },
   {
     id: 7,
-    topic: "3.4 ACID vs. BASE Properties in Databases",
+    topic: "3.5 ACID vs. BASE Properties in Databases",
     question: "What does 'Soft State' specifically imply in a distributed BASE-compliant NoSQL database like Apache Cassandra?",
     options: {
       A: "Data is stored in volatile RAM and lost upon server restart.",
@@ -460,7 +460,7 @@ const quizQuestions = [
   },
   {
     id: 8,
-    topic: "3.5 Read-Through vs. Write-Through Cache",
+    topic: "3.6 Read-Through vs. Write-Through Cache",
     question: "In a caching architecture, the application queries the cache layer directly. If a cache miss occurs, the CACHE LAYER itself synchronously fetches data from the database, populates itself, and returns the result to the application. What pattern is this?",
     options: {
       A: "Cache-Aside (Lazy Loading)",
@@ -478,7 +478,7 @@ const quizQuestions = [
   },
   {
     id: 9,
-    topic: "3.5 Read-Through vs. Write-Through Cache",
+    topic: "3.6 Read-Through vs. Write-Through Cache",
     question: "What is the primary trade-off of using a Write-Through caching strategy compared to a Write-Back (Write-Behind) caching strategy?",
     options: {
       A: "Write-Through has lower write latency because writes are stored asynchronously.",
@@ -514,7 +514,7 @@ const quizQuestions = [
   },
   {
     id: 11,
-    topic: "3.6 Batch Processing vs. Stream Processing",
+    topic: "3.7 Batch Processing vs. Stream Processing",
     question: "Which of the following scenarios is BEST suited for Batch Processing rather than Stream Processing?",
     options: {
       A: "Real-time user clickstream tracking for instant live recommendations.",
@@ -550,7 +550,7 @@ const quizQuestions = [
   },
   {
     id: 13,
-    topic: "3.7 Load Balancer vs. API Gateway",
+    topic: "3.8 Load Balancer vs. API Gateway",
     question: "What is the key functional difference between a Layer 4 (L4) Load Balancer and a Layer 7 (L7) API Gateway?",
     options: {
       A: "L4 inspects HTTP headers and JSON bodies, while L7 only inspects IP addresses.",
@@ -568,7 +568,7 @@ const quizQuestions = [
   },
   {
     id: 14,
-    topic: "3.8 API Gateway vs. Direct Service Exposure",
+    topic: "3.9 API Gateway vs. Direct Service Exposure",
     question: "Exposing 30 internal microservices directly to client mobile applications via public IP addresses (without an API Gateway) introduces which severe architectural downside?",
     options: {
       A: "Reduced network hops for every request.",
@@ -586,7 +586,7 @@ const quizQuestions = [
   },
   {
     id: 15,
-    topic: "3.9 Proxy vs. Reverse Proxy",
+    topic: "3.10 Proxy vs. Reverse Proxy",
     question: "An IT department routes all outbound web traffic from internal employee workstations through a dedicated gateway to inspect outgoing requests, filter restricted domain names, and mask internal IP addresses. What is this server?",
     options: {
       A: "Forward Proxy",
@@ -604,7 +604,7 @@ const quizQuestions = [
   },
   {
     id: 16,
-    topic: "3.10 API Gateway vs. Reverse Proxy",
+    topic: "3.11 API Gateway vs. Reverse Proxy",
     question: "An organization uses Nginx as a reverse proxy for SSL termination and static asset caching. Why might they introduce a dedicated API Gateway (e.g. Kong or Apigee) behind Nginx?",
     options: {
       A: "Because Nginx cannot handle TCP connections.",
@@ -658,7 +658,7 @@ const quizQuestions = [
   },
   {
     id: 19,
-    topic: "3.12 Primary-Replica vs. Peer-to-Peer Replication",
+    topic: "3.13 Primary-Replica vs. Peer-to-Peer Replication",
     question: "In a Primary-Replica (Single-Leader) database architecture with asynchronous replication, what happens if the Primary leader node crashes before replicating the latest write to any replica?",
     options: {
       A: "The write is automatically recovered from the replica via reverse sync.",
@@ -676,7 +676,7 @@ const quizQuestions = [
   },
   {
     id: 20,
-    topic: "3.12 Primary-Replica vs. Peer-to-Peer Replication",
+    topic: "3.13 Primary-Replica vs. Peer-to-Peer Replication",
     question: "A Peer-to-Peer (Leaderless / Dynamo-style) multi-region datastore allows clients to write to any node concurrently. What trade-off mechanism must the system implement to resolve conflicting concurrent writes to the same key?",
     options: {
       A: "Single-threaded locks on the client machine.",
@@ -694,7 +694,7 @@ const quizQuestions = [
   },
   {
     id: 21,
-    topic: "3.13 Data Compression vs. Data Deduplication",
+    topic: "3.14 Data Compression vs. Data Deduplication",
     question: "An enterprise cloud backup service stores 50,000 virtual machine disk images. Analysis reveals that 90% of operating system blocks are identical across all virtual machines. Which technique delivers the highest storage reduction for this specific scenario?",
     options: {
       A: "Data Compression (e.g. Gzip/Zstd) applied independently to each VM file.",
@@ -712,7 +712,7 @@ const quizQuestions = [
   },
   {
     id: 22,
-    topic: "3.14 Server-Side Caching vs. Client-Side Caching",
+    topic: "3.15 Server-Side Caching vs. Client-Side Caching",
     question: "An e-commerce site wants to ensure that static product assets (CSS, JS, product images) load instantly for returning users without generating any HTTP requests to the backend server. Which approach achieves this?",
     options: {
       A: "Server-side Redis cluster caching.",
@@ -730,7 +730,7 @@ const quizQuestions = [
   },
   {
     id: 23,
-    topic: "3.14 Server-Side Caching vs. Client-Side Caching",
+    topic: "3.15 Server-Side Caching vs. Client-Side Caching",
     question: "What is the primary advantage of Server-Side Caching (e.g. Memcached/Redis) over Client-Side Caching for dynamic user data?",
     options: {
       A: "Server-side caching works offline without internet connectivity.",
@@ -748,7 +748,7 @@ const quizQuestions = [
   },
   {
     id: 24,
-    topic: "3.15 REST vs. RPC (gRPC)",
+    topic: "3.16 REST vs. RPC (gRPC)",
     question: "A high-frequency internal microservices ecosystem requires low serialization latency, compact binary payload formats, and strict typed API contracts defined via Protocol Buffers over HTTP/2. Which communication technology should be used?",
     options: {
       A: "REST with JSON payloads over HTTP/1.1",
@@ -766,7 +766,7 @@ const quizQuestions = [
   },
   {
     id: 25,
-    topic: "3.16 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
+    topic: "3.17 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
     question: "A real-time online collaborative whiteboard app requires full-duplex, bi-directional, ultra-low latency interaction between hundreds of concurrent clients and the server over a single persistent TCP connection. Which technology is required?",
     options: {
       A: "Short Polling every 5 seconds",
@@ -784,7 +784,7 @@ const quizQuestions = [
   },
   {
     id: 26,
-    topic: "3.16 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
+    topic: "3.17 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
     question: "A payment gateway (e.g. Stripe) needs to inform an external merchant backend server whenever a customer successfully completes a payment asynchronously hours after checkout. What is the standard event-driven pattern?",
     options: {
       A: "Stripe short-polls the merchant server every 2 seconds.",
@@ -802,7 +802,7 @@ const quizQuestions = [
   },
   {
     id: 27,
-    topic: "3.16 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
+    topic: "3.17 Polling vs. Long-Polling vs. WebSockets vs. Webhooks",
     question: "What is the primary operational problem with Short Polling (e.g., client asking `/checkStatus` every 1 second) in a high-scale system?",
     options: {
       A: "It requires persistent open socket handles on the load balancer.",
@@ -820,7 +820,7 @@ const quizQuestions = [
   },
   {
     id: 28,
-    topic: "3.17 CDN Usage vs. Direct Server Serving",
+    topic: "3.18 CDN Usage vs. Direct Server Serving",
     question: "A media streaming platform serves static 4K video segments to millions of users spread across Asia, Europe, and America. Serving all video traffic directly from a central AWS us-east-1 origin server results in high latency for Asian users. How does a Content Delivery Network (CDN) solve this?",
     options: {
       A: "By re-encoding video files into smaller ZIP archives automatically.",
@@ -838,7 +838,7 @@ const quizQuestions = [
   },
   {
     id: 29,
-    topic: "3.18 Serverless Architecture vs. Traditional Server-Based",
+    topic: "3.19 Serverless Architecture vs. Traditional Server-Based",
     question: "A startup builds an image processing microservice that runs only 50 times per day on average, but occasionally bursts to 5,000 invocations during marketing campaigns. Idle periods can last for hours. Which deployment model minimizes cost?",
     options: {
       A: "Provisioning a cluster of 4 dedicated AWS EC2 instances running 24/7.",
@@ -856,7 +856,7 @@ const quizQuestions = [
   },
   {
     id: 30,
-    topic: "3.18 Serverless Architecture vs. Traditional Server-Based",
+    topic: "3.19 Serverless Architecture vs. Traditional Server-Based",
     question: "What is a major architectural downside of Serverless Functions (e.g. AWS Lambda) for ultra-low latency, persistent connection applications?",
     options: {
       A: "Serverless functions cannot process JSON data.",
@@ -874,7 +874,7 @@ const quizQuestions = [
   },
   {
     id: 31,
-    topic: "3.19 Stateful vs. Stateless Architecture",
+    topic: "3.20 Stateful vs. Stateless Architecture",
     question: "You are designing an auto-scaling REST API layer behind a Round-Robin Load Balancer. To ensure that ANY user request can be handled by ANY backend instance seamlessly, how should user session state be managed?",
     options: {
       A: "Store session data in the local RAM memory of the specific backend instance that logged the user in.",
@@ -892,7 +892,7 @@ const quizQuestions = [
   },
   {
     id: 32,
-    topic: "3.19 Stateful vs. Stateless Architecture",
+    topic: "3.20 Stateful vs. Stateless Architecture",
     question: "Which of the following application types INHERENTLY requires a Stateful Architecture?",
     options: {
       A: "A public RESTful weather reporting API.",
@@ -910,7 +910,7 @@ const quizQuestions = [
   },
   {
     id: 33,
-    topic: "3.20 Token Bucket vs. Leaky Bucket",
+    topic: "3.21 Token Bucket vs. Leaky Bucket",
     question: "An API Rate Limiter must allow applications to process short traffic bursts (e.g. 50 requests arriving at once in 10ms) provided the average request rate over a minute stays under limit. Which algorithm supports bursty traffic?",
     options: {
       A: "Leaky Bucket Algorithm",
@@ -928,7 +928,7 @@ const quizQuestions = [
   },
   {
     id: 34,
-    topic: "3.20 Token Bucket vs. Leaky Bucket",
+    topic: "3.21 Token Bucket vs. Leaky Bucket",
     question: "A rate limiter protects a legacy backend service that crashes if it receives traffic spikes exceeding exactly 100 requests per second. The outgoing flow to the legacy backend MUST be completely smooth and constant. Which algorithm should be chosen?",
     options: {
       A: "Token Bucket Algorithm",
@@ -946,7 +946,7 @@ const quizQuestions = [
   },
   {
     id: 35,
-    topic: "3.21 Read-Heavy vs. Write-Heavy System",
+    topic: "3.22 Read-Heavy vs. Write-Heavy System",
     question: "An IoT monitoring system ingests 3,000,000 log metrics per second. Standard B-Tree indexes on relational databases are causing severe disk random I/O write bottlenecks. Which storage engine data structure trade-off solves high write ingestion?",
     options: {
       A: "B+ Tree Indexes with heavy random write page splitting.",
