@@ -37,8 +37,9 @@
           </a>
         </li>
         <li>
-          <a href="#" class="{% if page.url contains 'quiz' %}active-link{% endif %}">
-            Quiz<span class="badge">Soon</span>
+          <a href="{{ '/System-Design/1-introduction-to-system-design-interview/quiz/' | relative_url }}"
+            class="{% if page.url contains '/System-Design/1-introduction-to-system-design-interview/quiz' %}active-link{% endif %}">
+            Quiz
           </a>
         </li>
       </ul>

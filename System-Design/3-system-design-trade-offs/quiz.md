@@ -1,6 +1,6 @@
 ---
 layout: default
-title: System Design Trade-offs Quiz (3.1 - 3.21)
+title: System Design Trade-offs Quiz
 permalink: /System-Design/3-system-design-trade-offs/quiz/
 prev_title: "Read-Heavy vs. Write-Heavy System"
 prev_url: "/System-Design/3-system-design-trade-offs/3.21-read-heavy-vs-write-heavy-system/"

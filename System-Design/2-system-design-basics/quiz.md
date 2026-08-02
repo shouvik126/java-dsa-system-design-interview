@@ -1,6 +1,6 @@
 ---
 layout: default
-title: System Design Basics Quiz (2.1 - 2.19)
+title: System Design Basics Quiz
 permalink: /System-Design/2-system-design-basics/quiz/
 prev_title: "Checksum"
 prev_url: "/System-Design/2-system-design-basics/2.19-checksum/"
