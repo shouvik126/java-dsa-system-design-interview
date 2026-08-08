@@ -63,8 +63,9 @@
         <a href="{{ '/Java/' | relative_url }}" class="nav-item {% if page.url contains '/Java/' %}active{% endif %}">
           Java
         </a>
-        <a href="#" class="nav-item disabled" title="Coming Soon">
-          Spring Boot
+        <a href="{{ '/Low-Level-Design/' | relative_url }}"
+          class="nav-item {% if page.url contains '/Low-Level-Design/' %}active{% endif %}">
+          Low-Level Design
         </a>
         <a href="#" class="nav-item disabled" title="Coming Soon">
           DSA
@@ -119,8 +120,9 @@
         class="mobile-cat-item {% if page.url contains '/Java/' %}active{% endif %}">
         Java
       </a>
-      <a href="#" class="mobile-cat-item disabled">
-        Spring Boot <span class="badge" style="font-size:0.6rem; margin-left:2px;">Soon</span>
+      <a href="{{ '/Low-Level-Design/' | relative_url }}"
+        class="mobile-cat-item {% if page.url contains '/Low-Level-Design/' %}active{% endif %}">
+        Low-Level Design
       </a>
       <a href="#" class="mobile-cat-item disabled">
         DSA <span class="badge" style="font-size:0.6rem; margin-left:2px;">Soon</span>
@@ -181,23 +183,8 @@
             </li>
           </ul>
         </div>
-        {% elsif page.url contains '/Spring-Boot/' %}
-        <div class="sidebar-section">
-          <h3 class="sidebar-heading">
-            <a href="#" class="active">
-              Spring Boot
-            </a>
-          </h3>
-          <ul class="sidebar-tree">
-            <!-- Placeholder groups for Spring Boot -->
-            <li class="tree-group disabled-group">
-              <span class="group-title">1. Core Concepts <span class="badge">Soon</span></span>
-            </li>
-            <li class="tree-group disabled-group">
-              <span class="group-title">2. Microservices <span class="badge">Soon</span></span>
-            </li>
-          </ul>
-        </div>
+        {% elsif page.url contains '/Low-Level-Design/' %}
+        {% include sidebar-low-level-design.html %}
         {% elsif page.url contains '/DSA/' %}
         <div class="sidebar-section">
           <h3 class="sidebar-heading">

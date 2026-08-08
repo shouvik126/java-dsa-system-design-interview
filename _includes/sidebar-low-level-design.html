@@ -1,0 +1,33 @@
+<div class="sidebar-section">
+  <h3 class="sidebar-heading">
+    <a href="{{ '/Low-Level-Design/' | relative_url }}"
+      class="{% if page.url == '/Low-Level-Design/' %}active{% endif %}">
+      Low-Level Design
+    </a>
+  </h3>
+  <ul class="sidebar-tree">
+    <li class="tree-group">
+      <div class="group-header">
+        <span class="group-title">1. Introduction to LLD</span>
+        <span class="group-toggle-icon"><i class="fas fa-chevron-down"></i></span>
+      </div>
+      <ul class="sub-tree">
+        <li>
+          <a href="{{ '/Low-Level-Design/' | relative_url }}"
+            class="{% if page.url == '/Low-Level-Design/' %}active-link{% endif %}">
+            Low-Level Design Guide
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="tree-group disabled-group">
+      <span class="group-title">2. Object-Oriented Design <span class="badge">Soon</span></span>
+    </li>
+    <li class="tree-group disabled-group">
+      <span class="group-title">3. Design Patterns <span class="badge">Soon</span></span>
+    </li>
+    <li class="tree-group disabled-group">
+      <span class="group-title">4. Classic LLD Problems <span class="badge">Soon</span></span>
+    </li>
+  </ul>
+</div>

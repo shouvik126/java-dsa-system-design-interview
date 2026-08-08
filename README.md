@@ -33,11 +33,12 @@ Select a module below to start preparing:
     </div>
   </div>
 
-  <div class="topic-card disabled">
-    <div class="topic-card-icon"><i class="fas fa-leaf"></i></div>
+  <div class="topic-card">
+    <div class="topic-card-icon"><i class="fas fa-cogs"></i></div>
     <div class="topic-card-content">
-      <h3 class="topic-card-title">Spring Boot <span class="badge badge-soon">Soon</span></h3>
-      <p class="topic-card-description">Master Spring Core IoC/DI, Spring Boot auto-configuration, security, cloud-native architectures, API gateways, service discovery, and transaction management.</p>
+      <h3 class="topic-card-title"><a href="./Low-Level-Design/">Low-Level Design</a></h3>
+      <p class="topic-card-description">Master Object-Oriented Design (OOD) principles, SOLID design patterns, class diagrams, UML modeling, schema design, and clean code practices for real-world software components.</p>
+      <a href="./Low-Level-Design/" class="topic-card-link">Go to Low-Level Design Guide <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 
@@ -54,7 +55,7 @@ Select a module below to start preparing:
 
 ## 🚀 How to Use This Resource
 
-1.  **Read the Guides**: Navigate to the specific topic pages (e.g., the [System Design](./System-Design/) or [Java](./Java/) guide) to review theory, architectures, and design patterns.
+1.  **Read the Guides**: Navigate to the specific topic pages (e.g., [System Design](./System-Design/), [Low-Level Design](./Low-Level-Design/), or [Java](./Java/) guide) to review theory, architectures, and design patterns.
 2.  **Practice System Design**: Apply the 5-step framework detailed in the System Design guide to design real-world systems (e.g., URL shortener, Uber, Web crawler).
 3.  **Contribute**: If you find bugs, typos, or want to add new interview questions/patterns, feel free to open a Pull Request!
 
