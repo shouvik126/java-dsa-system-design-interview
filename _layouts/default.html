@@ -19,6 +19,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <!-- Inline Theme Script to prevent flash of light theme -->
   <script>
     (function () {
@@ -321,6 +322,65 @@
         } else if (typeof mermaid.init === 'function') {
           mermaid.init();
         }
+      }
+
+      // Syntax Highlighting & Code Header (Language Badge + Copy Button)
+      if (typeof hljs !== 'undefined') {
+        const syntaxBlocks = document.querySelectorAll('.markdown-body pre code, div.highlighter-rouge pre code');
+        syntaxBlocks.forEach(block => {
+          const codeElement = block.tagName === 'CODE' ? block : block.querySelector('code');
+          if (!codeElement) return;
+
+          // Execute Highlight.js on code element
+          hljs.highlightElement(codeElement);
+
+          // Add Code Header Bar
+          const preElement = codeElement.closest('pre');
+          if (preElement && !preElement.querySelector('.code-header')) {
+            let lang = 'CODE';
+            const classes = Array.from(codeElement.classList)
+              .concat(Array.from(preElement.classList))
+              .concat(preElement.parentElement ? Array.from(preElement.parentElement.classList) : []);
+
+            for (const cls of classes) {
+              if (cls.startsWith('language-')) {
+                lang = cls.replace('language-', '');
+                break;
+              } else if (cls.startsWith('lang-')) {
+                lang = cls.replace('lang-', '');
+                break;
+              }
+            }
+
+            if (lang === 'highlighter-rouge' || lang === 'highlight') lang = 'CODE';
+
+            const header = document.createElement('div');
+            header.className = 'code-header';
+            header.innerHTML = `
+              <span class="code-lang-badge"><i class="fas fa-code"></i> ${lang.toUpperCase()}</span>
+              <button class="code-copy-btn" title="Copy Code">
+                <i class="far fa-copy"></i> <span>Copy</span>
+              </button>
+            `;
+
+            const copyBtn = header.querySelector('.code-copy-btn');
+            copyBtn.addEventListener('click', function () {
+              const textToCopy = codeElement.textContent;
+              navigator.clipboard.writeText(textToCopy).then(() => {
+                copyBtn.classList.add('copied');
+                copyBtn.innerHTML = `<i class="fas fa-check"></i> <span>Copied!</span>`;
+                setTimeout(() => {
+                  copyBtn.classList.remove('copied');
+                  copyBtn.innerHTML = `<i class="far fa-copy"></i> <span>Copy</span>`;
+                }, 2000);
+              }).catch(err => {
+                console.error('Copy failed: ', err);
+              });
+            });
+
+            preElement.insertBefore(header, preElement.firstChild);
+          }
+        });
       }
     });
 

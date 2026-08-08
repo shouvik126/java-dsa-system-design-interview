@@ -593,37 +593,235 @@ a:hover {
   margin-bottom: 0.4rem;
 }
 
-/* Code Snippets */
+/* Code Snippets & Syntax Highlighting */
 .markdown-body code {
   font-family: var(--font-mono);
-  font-size: 0.85em;
+  font-size: 0.86em;
   background-color: var(--code-bg);
-  padding: 0.18rem 0.4rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 6px;
   color: var(--code-color);
-  border: 1px solid rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.15);
   transition: all 0.2s ease;
   word-break: break-word;
 }
 
 .markdown-body pre {
-  background-color: #0d1117;
+  position: relative;
+  background-color: #1e1e2e;
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2.75rem 1.25rem 1.25rem 1.25rem;
   margin-bottom: 1.75rem;
   overflow-x: auto;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #313244;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .markdown-body pre code {
   background-color: transparent;
-  color: #e2e8f0;
   padding: 0;
   border-radius: 0;
-  font-size: 0.85rem;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  line-height: 1.65;
   border: none;
+  font-family: var(--font-mono);
+  color: #cdd6f4;
+  word-break: normal;
+  white-space: pre;
+}
+
+/* Code Header Bar (Language Badge & Copy Button) */
+.code-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.2rem;
+  background: rgba(0, 0, 0, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+  user-select: none;
+}
+
+.code-lang-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #89b4fa;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.code-copy-btn {
+  background: transparent;
+  border: none;
+  color: #a6adc8;
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.code-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.code-copy-btn.copied {
+  color: #a6e3a1;
+}
+
+/* Syntax Highlighting Tokens - Dark Theme (Default/Dark Mode) */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #cba6f7 !important; /* Vivid Mauve / Neon Purple */
+  font-weight: 600;
+}
+
+.hljs-type,
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+  color: #89b4fa !important; /* Bright Neon Blue */
+  font-weight: 600;
+}
+
+.hljs-function .hljs-title,
+.hljs-title.function_,
+.hljs-title.function_.invoke_ {
+  color: #89dceb !important; /* Vivid Cyan / Sky Blue */
+  font-weight: 600;
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #a6e3a1 !important; /* Vivid Mint Green */
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #fab387 !important; /* Warm Peach / Coral Orange */
+  font-weight: 600;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: #7f849c !important; /* Soft Slate Gray */
+  font-style: italic;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+  color: #f9e2af !important; /* Warm Gold / Yellow */
+  font-weight: 600;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag {
+  color: #f5e0dc !important;
+}
+
+.hljs-punctuation,
+.hljs-operator {
+  color: #94e2d5 !important;
+}
+
+/* Syntax Highlighting Tokens - Light Theme */
+html:not(.dark-theme) .markdown-body pre {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark-theme) .markdown-body pre code {
+  color: #1e293b;
+}
+
+html:not(.dark-theme) .code-header {
+  background: #f1f5f9;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+html:not(.dark-theme) .code-lang-badge {
+  color: #2563eb;
+}
+
+html:not(.dark-theme) .code-copy-btn {
+  color: #64748b;
+}
+
+html:not(.dark-theme) .code-copy-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+html:not(.dark-theme) .hljs-keyword,
+html:not(.dark-theme) .hljs-selector-tag,
+html:not(.dark-theme) .hljs-subst {
+  color: #7c3aed !important; /* Rich Indigo / Purple */
+  font-weight: 600;
+}
+
+html:not(.dark-theme) .hljs-type,
+html:not(.dark-theme) .hljs-class .hljs-title,
+html:not(.dark-theme) .hljs-title.class_ {
+  color: #2563eb !important; /* Royal Blue */
+  font-weight: 600;
+}
+
+html:not(.dark-theme) .hljs-function .hljs-title,
+html:not(.dark-theme) .hljs-title.function_,
+html:not(.dark-theme) .hljs-title.function_.invoke_ {
+  color: #0284c7 !important; /* Ocean Blue */
+  font-weight: 600;
+}
+
+html:not(.dark-theme) .hljs-string,
+html:not(.dark-theme) .hljs-symbol,
+html:not(.dark-theme) .hljs-bullet,
+html:not(.dark-theme) .hljs-addition {
+  color: #16a34a !important; /* Forest Emerald Green */
+}
+
+html:not(.dark-theme) .hljs-number,
+html:not(.dark-theme) .hljs-literal,
+html:not(.dark-theme) .hljs-built_in,
+html:not(.dark-theme) .hljs-builtin-name {
+  color: #ea580c !important; /* Burnt Orange */
+  font-weight: 600;
+}
+
+html:not(.dark-theme) .hljs-comment,
+html:not(.dark-theme) .hljs-quote,
+html:not(.dark-theme) .hljs-deletion {
+  color: #64748b !important; /* Slate Gray */
+  font-style: italic;
+}
+
+html:not(.dark-theme) .hljs-meta,
+html:not(.dark-theme) .hljs-meta .hljs-keyword {
+  color: #d97706 !important; /* Warm Amber */
+  font-weight: 600;
 }
 
 /* Blockquotes */
