@@ -28,6 +28,7 @@ To help you prepare systematically, the content is organized into key focus area
 ### 6. UML
 
 ### 7. Design Patterns
+*   [Prototype Pattern](./7-design-patterns/7.10-prototype.md)
 
 ### 8. LLD Interview Tips
 
