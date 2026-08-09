@@ -35,6 +35,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Decorator Pattern](./7-design-patterns/7.17-decorator.md)
 *   [Composite Pattern](./7-design-patterns/7.19-composite.md)
 *   [Proxy Pattern](./7-design-patterns/7.21-proxy.md)
+*   [Bridge Pattern](./7-design-patterns/7.23-bridge.md)
 
 ### 8. LLD Interview Tips
 
