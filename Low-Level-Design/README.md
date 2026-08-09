@@ -38,6 +38,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Bridge Pattern](./7-design-patterns/7.23-bridge.md)
 *   [Flyweight Pattern](./7-design-patterns/7.25-flyweight.md)
 *   [Strategy Pattern](./7-design-patterns/7.28-strategy.md)
+*   [Iterator Pattern](./7-design-patterns/7.30-iterator.md)
 
 ### 8. LLD Interview Tips
 
