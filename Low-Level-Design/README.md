@@ -43,6 +43,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Command Pattern](./7-design-patterns/7.34-command.md)
 *   [State Pattern](./7-design-patterns/7.36-state.md)
 *   [Template Method Pattern](./7-design-patterns/7.38-template-method.md)
+*   [Mediator Pattern](./7-design-patterns/7.44-mediator.md)
 
 ### 8. LLD Interview Tips
 
