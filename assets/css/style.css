@@ -507,6 +507,27 @@ a:hover {
   letter-spacing: 0.02em;
 }
 
+.sub-tree-divider {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #059669;
+  background-color: rgba(16, 185, 129, 0.12);
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  margin-left: 0.3rem;
+  user-select: none;
+}
+
+.dark-theme .sub-tree-divider {
+  color: #34d399;
+  background-color: rgba(52, 211, 153, 0.15);
+}
+
 /* ==========================================================================
    MAIN CONTENT AREA
    ========================================================================== */
