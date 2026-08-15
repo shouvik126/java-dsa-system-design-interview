@@ -76,9 +76,8 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz](./3-system-design-trade-offs/quiz.md)
 
 ### 4. System Design Problems
-*   **APIs**: REST, GraphQL, and gRPC.
-*   **Message Queues & Event Streaming**: Pub/Sub systems (Kafka, RabbitMQ) and asynchronous messaging.
-*   **WebSockets & Server-Sent Events (SSE)**: For real-time updates. -->
+*   [System Design Interviews: A Step-by-Step Guide](./4-system-design-problems/4.1-system-design-interviews-a-step-by-step-guide.md)
+*   [System Design Master Template](./4-system-design-problems/4.2-system-design-master-template.md)
 
 ---
 

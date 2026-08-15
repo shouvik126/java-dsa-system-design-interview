@@ -4,6 +4,8 @@ title: System Design Trade-offs Quiz
 permalink: /System-Design/3-system-design-trade-offs/quiz/
 prev_title: "Read-Heavy vs. Write-Heavy System"
 prev_url: "/System-Design/3-system-design-trade-offs/3.25-read-heavy-vs-write-heavy-system/"
+next_title: "System Design Interviews: A Step-by-Step Guide"
+next_url: "/System-Design/4-system-design-problems/4.1-system-design-interviews-a-step-by-step-guide/"
 ---
 
 # System Design Trade-offs Quiz (Modules 3.1 - 3.25)
