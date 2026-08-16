@@ -349,6 +349,36 @@
 
         pre.appendChild(copyBtn);
       });
+
+      // Transform GitHub-style blockquote alerts [!NOTE], [!TIP], [!IMPORTANT], [!WARNING], [!CAUTION]
+      document.querySelectorAll('.markdown-body blockquote').forEach(bq => {
+        const html = bq.innerHTML;
+        const match = html.match(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i);
+        if (match) {
+          const type = match[1].toUpperCase();
+          const config = {
+            NOTE: { icon: 'fa-circle-info', title: 'Note', class: 'callout-note' },
+            TIP: { icon: 'fa-lightbulb', title: 'Tip', class: 'callout-tip' },
+            IMPORTANT: { icon: 'fa-circle-exclamation', title: 'Important', class: 'callout-important' },
+            WARNING: { icon: 'fa-triangle-exclamation', title: 'Warning', class: 'callout-warning' },
+            CAUTION: { icon: 'fa-hand', title: 'Caution', class: 'callout-caution' }
+          };
+          const cfg = config[type] || config.NOTE;
+
+          bq.classList.add('callout', cfg.class);
+
+          bq.querySelectorAll('p').forEach(p => {
+            if (p.innerHTML.match(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i)) {
+              p.innerHTML = p.innerHTML.replace(/\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/i, '');
+            }
+          });
+
+          const header = document.createElement('div');
+          header.className = 'callout-header';
+          header.innerHTML = `<i class="fa-solid ${cfg.icon}"></i> <span>${cfg.title}</span>`;
+          bq.insertBefore(header, bq.firstChild);
+        }
+      });
     });
 
     // Light/Dark Theme Switcher

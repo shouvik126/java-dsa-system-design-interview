@@ -881,6 +881,119 @@ html:not(.dark-theme) .highlight .nd {
   margin-bottom: 0;
 }
 
+/* GitHub / Notion Style Callout Alert Boxes */
+.markdown-body blockquote.callout {
+  padding: 1.1rem 1.35rem;
+  border-left-width: 4px;
+  border-radius: 8px;
+  margin-bottom: 1.75rem;
+}
+
+.markdown-body blockquote.callout .callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body blockquote.callout .callout-header i {
+  font-size: 1rem;
+}
+
+/* Callout Types (Light Mode) */
+.markdown-body blockquote.callout-note {
+  border-left-color: #0284c7;
+  background-color: #f0f9ff;
+  color: #0c4a6e;
+}
+.markdown-body blockquote.callout-note .callout-header {
+  color: #0284c7;
+}
+
+.markdown-body blockquote.callout-tip {
+  border-left-color: #10b981;
+  background-color: #ecfdf5;
+  color: #064e3b;
+}
+.markdown-body blockquote.callout-tip .callout-header {
+  color: #059669;
+}
+
+.markdown-body blockquote.callout-important {
+  border-left-color: #8b5cf6;
+  background-color: #f5f3ff;
+  color: #4c1d95;
+}
+.markdown-body blockquote.callout-important .callout-header {
+  color: #7c3aed;
+}
+
+.markdown-body blockquote.callout-warning {
+  border-left-color: #f59e0b;
+  background-color: #fffbeb;
+  color: #78350f;
+}
+.markdown-body blockquote.callout-warning .callout-header {
+  color: #d97706;
+}
+
+.markdown-body blockquote.callout-caution {
+  border-left-color: #ef4444;
+  background-color: #fef2f2;
+  color: #7f1d1d;
+}
+.markdown-body blockquote.callout-caution .callout-header {
+  color: #dc2626;
+}
+
+/* Callout Types (Dark Mode) */
+html.dark-theme .markdown-body blockquote.callout-note {
+  border-left-color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.12);
+  color: #bae6fd;
+}
+html.dark-theme .markdown-body blockquote.callout-note .callout-header {
+  color: #38bdf8;
+}
+
+html.dark-theme .markdown-body blockquote.callout-tip {
+  border-left-color: #34d399;
+  background-color: rgba(52, 211, 153, 0.12);
+  color: #a7f3d0;
+}
+html.dark-theme .markdown-body blockquote.callout-tip .callout-header {
+  color: #34d399;
+}
+
+html.dark-theme .markdown-body blockquote.callout-important {
+  border-left-color: #a78bfa;
+  background-color: rgba(167, 139, 250, 0.12);
+  color: #ddd6fe;
+}
+html.dark-theme .markdown-body blockquote.callout-important .callout-header {
+  color: #a78bfa;
+}
+
+html.dark-theme .markdown-body blockquote.callout-warning {
+  border-left-color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.12);
+  color: #fde68a;
+}
+html.dark-theme .markdown-body blockquote.callout-warning .callout-header {
+  color: #fbbf24;
+}
+
+html.dark-theme .markdown-body blockquote.callout-caution {
+  border-left-color: #f87171;
+  background-color: rgba(248, 113, 113, 0.12);
+  color: #fecaca;
+}
+html.dark-theme .markdown-body blockquote.callout-caution .callout-header {
+  color: #f87171;
+}
+
 .markdown-body hr {
   height: 1px;
   background-color: var(--border-color);
