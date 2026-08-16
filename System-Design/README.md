@@ -79,6 +79,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [System Design Interviews: A Step-by-Step Guide](./4-system-design-problems/4.1-system-design-interviews-a-step-by-step-guide.md)
 *   [System Design Master Template](./4-system-design-problems/4.2-system-design-master-template.md)
 *   [Designing a URL Shortening Service like TinyURL](./4-system-design-problems/4.3-designing-a-url-shortening-service-like-tinyurl.md)
+*   [Quiz - Designing a URL Shortening Service](./4-system-design-problems/4.3-quiz-designing-url-shortner.md)
 
 ---
 
