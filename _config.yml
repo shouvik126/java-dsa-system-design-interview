@@ -4,4 +4,8 @@ description: A comprehensive study guide for Java, Data Structures, Algorithms, 
 theme: null
 show_downloads: false
 google_analytics:
-# Add custom navigation or configuration as needed
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
