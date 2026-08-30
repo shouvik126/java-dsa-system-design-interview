@@ -749,7 +749,7 @@ const quizQuestions = [
   {
     id: 24,
     topic: "2.13 Consistent Hashing",
-    question: "In traditional hash sharding (`hash(key) % N`), adding or removing 1 server node from a cluster of $N$ nodes causes what major operational disaster?",
+    question: "In traditional hash sharding (`hash(key) % N`), adding or removing 1 server node from a cluster of N nodes causes what major operational disaster?",
     options: {
       A: "100% of network traffic shifts to node 0.",
       B: "Nearly 100% of all keys remap to different server nodes, causing massive cache misses and database thundering herd crashes.",
@@ -759,7 +759,7 @@ const quizQuestions = [
     correct: "B",
     explanations: {
       A: "Option A is incorrect. Modulo hashing redistributes keys across all nodes, not just node 0.",
-      B: "Option B is correct! Traditional modulo $N$ hashing changes the divisor when $N$ changes. As a result, almost $K/N$ keys move to new locations, invalidating distributed caches globally.",
+      B: "Option B is correct! Traditional modulo N hashing changes the divisor when N changes. As a result, almost K/N keys move to new locations, invalidating distributed caches globally.",
       C: "Option C is incorrect. Modulo hashing invalidates key locations, but does not physically corrupt storage files.",
       D: "Option D is incorrect. The mathematical modulo calculation executes normally."
     }
@@ -842,14 +842,14 @@ const quizQuestions = [
     question: "How does a Bloom Filter maintain extreme memory efficiency (e.g. checking 1 Billion keys in a few megabytes of RAM)?",
     options: {
       A: "By compressing string keys using ZIP archives in memory.",
-      B: "By representing items as bit flags in a bit array updated via $k$ independent cryptographic hash functions, without storing the actual key strings.",
+      B: "By representing items as bit flags in a bit array updated via k independent cryptographic hash functions, without storing the actual key strings.",
       C: "By writing keys to SSD swap space.",
       D: "By storing keys in a B-Tree structure."
     },
     correct: "B",
     explanations: {
       A: "Option A is incorrect. String compression still stores character data.",
-      B: "Option B is correct! Bloom filters do not store actual keys or values. They pass a key through $k$ hash functions to turn $k$ specific bit positions to `1` in a shared bit array, storing billions of set membership records in mere megabytes of RAM.",
+      B: "Option B is correct! Bloom filters do not store actual keys or values. They pass a key through k hash functions to turn k specific bit positions to `1` in a shared bit array, storing billions of set membership records in mere megabytes of RAM.",
       C: "Option C is incorrect. Bloom filters operate in RAM.",
       D: "Option D is incorrect. B-Trees store keys and pointers, consuming significant memory."
     }
@@ -857,25 +857,25 @@ const quizQuestions = [
   {
     id: 30,
     topic: "2.16 Quorum Consensus",
-    question: "A distributed datastore uses replication factor $N = 5$. To guarantee **Strong Consistency** (ensuring every read sees the latest write), what mathematical condition must the Read Quorum ($R$) and Write Quorum ($W$) satisfy?",
+    question: "A distributed datastore uses replication factor N = 5. To guarantee **Strong Consistency** (ensuring every read sees the latest write), what mathematical condition must the Read Quorum (R) and Write Quorum (W) satisfy?",
     options: {
-      A: "$R + W \\le N$",
-      B: "$R + W > N$",
-      C: "$R = 1$ and $W = 1$",
-      D: "$R \\times W = N$"
+      A: "R + W ≤ N",
+      B: "R + W > N",
+      C: "R = 1 and W = 1",
+      D: "R × W = N"
     },
     correct: "B",
     explanations: {
-      A: "Option A is incorrect. If $R + W \\le N$, read and write sets may be completely disjoint, allowing stale reads.",
-      B: "Option B is correct! The Quorum intersection principle states that if $R + W > N$, the set of nodes read from and the set of nodes written to MUST overlap by at least 1 node containing the latest write timestamp.",
-      C: "Option C is incorrect. $R=1, W=1$ with $N=5$ yields $R+W=2 \\le 5$, producing eventual consistency with stale reads.",
+      A: "Option A is incorrect. If R + W ≤ N, read and write sets may be completely disjoint, allowing stale reads.",
+      B: "Option B is correct! The Quorum intersection principle states that if R + W > N, the set of nodes read from and the set of nodes written to MUST overlap by at least 1 node containing the latest write timestamp.",
+      C: "Option C is incorrect. R=1, W=1 with N=5 yields R+W=2 ≤ 5, producing eventual consistency with stale reads.",
       D: "Option D is incorrect. Multiplication is not the quorum formula."
     }
   },
   {
     id: 31,
     topic: "2.16 Quorum Consensus",
-    question: "In Apache Cassandra configured with $N=3, W=QUORUM, R=QUORUM$, how many replica nodes must acknowledge a write operation before success is returned to the client?",
+    question: "In Apache Cassandra configured with N=3, W=QUORUM, R=QUORUM, how many replica nodes must acknowledge a write operation before success is returned to the client?",
     options: {
       A: "1 node",
       B: "2 nodes",
@@ -884,9 +884,9 @@ const quizQuestions = [
     },
     correct: "B",
     explanations: {
-      A: "Option A is incorrect. 1 node corresponds to $W=1$ (LOCAL_ONE).",
-      B: "Option B is correct! For $N=3$, $\\text{QUORUM} = \\lfloor N/2 \\rfloor + 1 = \\lfloor 3/2 \\rfloor + 1 = 2$. Thus, 2 out of 3 replicas must acknowledge the write.",
-      C: "Option C is incorrect. 3 nodes corresponds to $W=ALL$.",
+      A: "Option A is incorrect. 1 node corresponds to W=1 (LOCAL_ONE).",
+      B: "Option B is correct! For N=3, QUORUM = ⌊N/2⌋ + 1 = ⌊3/2⌋ + 1 = 2. Thus, 2 out of 3 replicas must acknowledge the write.",
+      C: "Option C is incorrect. 3 nodes corresponds to W=ALL.",
       D: "Option D is incorrect. 0 nodes corresponds to asynchronous unacknowledged writes."
     }
   },
@@ -896,14 +896,14 @@ const quizQuestions = [
     question: "In a Raft/Paxos consensus cluster of 5 nodes, two leader candidates trigger an election simultaneously after a network split, each securing 2 votes out of 5. What prevents a dangerous 'Split-Brain' scenario?",
     options: {
       A: "Both candidates become leaders simultaneously.",
-      B: "Strict Quorum rules require a majority of votes ($N/2 + 1 = 3$ votes out of 5) to win leadership; since neither reached 3, randomized election timeouts trigger a new election round.",
+      B: "Strict Quorum rules require a majority of votes (N/2 + 1 = 3 votes out of 5) to win leadership; since neither reached 3, randomized election timeouts trigger a new election round.",
       C: "The load balancer picks a leader at random.",
       D: "The node with the highest IP address automatically wins."
     },
     correct: "B",
     explanations: {
       A: "Option A is incorrect. Having two active leaders creates split-brain data corruption.",
-      B: "Option B is correct! Consensus algorithms require a strict majority quorum ($N/2 + 1$, which is 3 out of 5) to declare a leader. Split votes result in election timeout resets, guaranteeing only one leader can ever emerge.",
+      B: "Option B is correct! Consensus algorithms require a strict majority quorum (N/2 + 1, which is 3 out of 5) to declare a leader. Split votes result in election timeout resets, guaranteeing only one leader can ever emerge.",
       C: "Option C is incorrect. Load balancers do not manage internal Paxos/Raft leader consensus.",
       D: "Option D is incorrect. IP address hierarchy is not a consensus protocol mechanism."
     }

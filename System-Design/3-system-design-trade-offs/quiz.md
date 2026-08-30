@@ -355,7 +355,7 @@ const quizQuestions = [
   {
     id: 2,
     topic: "3.2 Strong vs. Eventual Consistency",
-    question: "A banking system processes account balance transfers where a user deposits $100 and immediately checks their balance from a different application instance. The read must ALWAYS reflect the $100 deposit. Which consistency model is strictly required?",
+    question: "A banking system processes account balance transfers where a user deposits \$100 and immediately checks their balance from a different application instance. The read must ALWAYS reflect the \$100 deposit. Which consistency model is strictly required?",
     options: {
       A: "Eventual Consistency, because data converges across replicas within a few seconds.",
       B: "Strong Consistency (Linearizability), ensuring every read receives the most recent write or an error.",

@@ -488,7 +488,7 @@ const quizQuestions = [
     },
     correct: "A",
     explanations: {
-      A: "Option A is correct! There are 86,400 seconds in a day (round to 90,000 for mental math). $\\frac{10,000,000}{86,400} \\approx 115.7 \\approx 116 \\text{ QPS}$. (Useful tip: 1 Million requests/day $\\approx$ 12 QPS).",
+      A: "Option A is correct! There are 86,400 seconds in a day (round to 90,000 for mental math). 10,000,000 / 86,400 ≈ 115.7 ≈ 116 QPS. (Useful tip: 1 Million requests/day ≈ 12 QPS).",
       B: "Option B is incorrect. 1,160 QPS corresponds to 100 Million requests per day.",
       C: "Option C is incorrect. 11,600 QPS corresponds to 1 Billion requests per day.",
       D: "Option D is incorrect. 116,000 QPS corresponds to 10 Billion requests per day."
@@ -507,7 +507,7 @@ const quizQuestions = [
     correct: "B",
     explanations: {
       A: "Option A is incorrect. Provisioning for average QPS leads to outage during peak traffic spikes.",
-      B: "Option B is correct! Peak QPS = Average QPS $\\times$ Peak Factor = $500 \\times 2 = 1,000 \\text{ QPS}$. In system design, systems must be architected to handle Peak QPS headroom seamlessly.",
+      B: "Option B is correct! Peak QPS = Average QPS × Peak Factor = 500 × 2 = 1,000 QPS. In system design, systems must be architected to handle Peak QPS headroom seamlessly.",
       C: "Option C is incorrect. 5,000 QPS represents a 10x multiplier.",
       D: "Option D is incorrect. 50,000 QPS represents a 100x multiplier."
     }
@@ -517,17 +517,17 @@ const quizQuestions = [
     topic: "1.3 Back-of-the-Envelope Estimations",
     question: "In system design storage estimations, what is the exact relationship between Bytes, Gigabytes (GB), Terabytes (TB), and Petabytes (PB) in power-of-two powers?",
     options: {
-      A: "$1 \\text{ GB} = 10^3 \\text{ Bytes}$, $1 \\text{ TB} = 10^6 \\text{ Bytes}$, $1 \\text{ PB} = 10^9 \\text{ Bytes}$",
-      B: "$1 \\text{ GB} = 2^{30} \\text{ Bytes} (\\sim 10^9)$, $1 \\text{ TB} = 2^{40} \\text{ Bytes} (\\sim 10^{12})$, $1 \\text{ PB} = 2^{50} \\text{ Bytes} (\\sim 10^{15})$",
-      C: "$1 \\text{ GB} = 10^{12} \\text{ Bytes}$, $1 \\text{ TB} = 10^{15} \\text{ Bytes}$",
-      D: "$1 \\text{ PB} = 10^6 \\text{ Bytes}$"
+      A: "1 GB = 10³ Bytes, 1 TB = 10⁶ Bytes, 1 PB = 10⁹ Bytes",
+      B: "1 GB = 2³⁰ Bytes (~10⁹), 1 TB = 2⁴⁰ Bytes (~10¹²), 1 PB = 2⁵⁰ Bytes (~10¹⁵)",
+      C: "1 GB = 10¹² Bytes, 1 TB = 10¹⁵ Bytes",
+      D: "1 PB = 10⁶ Bytes"
     },
     correct: "B",
     explanations: {
-      A: "Option A is incorrect. $10^3$ bytes is a Kilobyte, not a Gigabyte.",
-      B: "Option B is correct! In computer science estimations: $1 \\text{ KB} = 2^{10} \\approx 10^3 \\text{ Bytes}$, $1 \\text{ MB} = 2^{20} \\approx 10^6 \\text{ Bytes}$, $1 \\text{ GB} = 2^{30} \\approx 10^9 \\text{ Bytes}$, $1 \\text{ TB} = 2^{40} \\approx 10^{12} \\text{ Bytes}$, and $1 \\text{ PB} = 2^{50} \\approx 10^{15} \\text{ Bytes}$.",
-      C: "Option C is incorrect. $10^{12}$ bytes is a Terabyte, not a Gigabyte.",
-      D: "Option D is incorrect. $10^6$ bytes is a Megabyte."
+      A: "Option A is incorrect. 10³ bytes is a Kilobyte, not a Gigabyte.",
+      B: "Option B is correct! In computer science estimations: 1 KB = 2¹⁰ ≈ 10³ Bytes, 1 MB = 2²⁰ ≈ 10⁶ Bytes, 1 GB = 2³⁰ ≈ 10⁹ Bytes, 1 TB = 2⁴⁰ ≈ 10¹² Bytes, and 1 PB = 2⁵⁰ ≈ 10¹⁵ Bytes.",
+      C: "Option C is incorrect. 10¹² bytes is a Terabyte, not a Gigabyte.",
+      D: "Option D is incorrect. 10⁶ bytes is a Megabyte."
     }
   },
   {
@@ -543,7 +543,7 @@ const quizQuestions = [
     correct: "B",
     explanations: {
       A: "Option A is incorrect. 3.65 TB is off by a factor of 100.",
-      B: "Option B is correct! Daily Storage = $500,000 \\text{ photos} \\times 2 \\text{ MB} = 1,000,000 \\text{ MB} = 1 \\text{ TB/day}$. Yearly Storage = $1 \\text{ TB/day} \\times 365 \\text{ days} = 365 \\text{ TB}$. Quick mental math is a key skill evaluated in back-of-the-envelope estimations.",
+      B: "Option B is correct! Daily Storage = 500,000 photos × 2 MB = 1,000,000 MB = 1 TB/day. Yearly Storage = 1 TB/day × 365 days = 365 TB. Quick mental math is a key skill evaluated in back-of-the-envelope estimations.",
       C: "Option C is incorrect. 36.5 PB is off by 100x.",
       D: "Option D is incorrect. 3.65 GB is far too low."
     }
@@ -561,7 +561,7 @@ const quizQuestions = [
     correct: "B",
     explanations: {
       A: "Option A is incorrect. 1 Byte = 8 bits, so 100 MB/s is NOT 100 Mbps.",
-      B: "Option B is correct! Network bandwidth from ISPs and cloud providers is measured in bits (b), while storage is measured in Bytes (B). $100 \\text{ MB/s} \\times 8 \\text{ bits/Byte} = 800 \\text{ Mbps}$ (or 0.8 Gbps).",
+      B: "Option B is correct! Network bandwidth from ISPs and cloud providers is measured in bits (b), while storage is measured in Bytes (B). 100 MB/s × 8 bits/Byte = 800 Mbps (or 0.8 Gbps).",
       C: "Option C is incorrect. 8,000 Mbps corresponds to 1,000 MB/s.",
       D: "Option D is incorrect."
     }
