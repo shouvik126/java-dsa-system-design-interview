@@ -394,8 +394,14 @@
         </li>
         <li>
           <a href="{{ '/System-Design/4-system-design-problems/4.6-designing-dropbox/' | relative_url }}"
-            class="{% if page.url contains '4.6-designing-dropbox' %}active-link{% endif %}">
+            class="{% if page.url contains '4.6-designing-dropbox' and page.url doesNotContain 'quiz' %}active-link{% endif %}">
             Designing Dropbox
+          </a>
+        </li>
+        <li>
+          <a href="{{ '/System-Design/4-system-design-problems/4.6-quiz-designing-dropbox/' | relative_url }}"
+            class="{% if page.url contains '4.6-quiz-designing-dropbox' %}active-link{% endif %}">
+            Quiz - Designing Dropbox
           </a>
         </li>
       </ul>

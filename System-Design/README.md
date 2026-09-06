@@ -85,6 +85,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Designing Instagram](./4-system-design-problems/4.5-designing-instagram.md)
 *   [Quiz - Designing Instagram](./4-system-design-problems/4.5-quiz-designing-instagram.md)
 *   [Designing Dropbox](./4-system-design-problems/4.6-designing-dropbox.md)
+*   [Quiz - Designing Dropbox](./4-system-design-problems/4.6-quiz-designing-dropbox.md)
 
 ---
 
