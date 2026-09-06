@@ -84,6 +84,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz - Designing Pastebin](./4-system-design-problems/4.4-quiz-designing-pastebin.md)
 *   [Designing Instagram](./4-system-design-problems/4.5-designing-instagram.md)
 *   [Quiz - Designing Instagram](./4-system-design-problems/4.5-quiz-designing-instagram.md)
+*   [Designing Dropbox](./4-system-design-problems/4.6-designing-dropbox.md)
 
 ---
 
