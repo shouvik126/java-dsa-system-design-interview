@@ -47,9 +47,16 @@
   <!-- Top Navigation Bar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="{{ '/' | relative_url }}" class="nav-logo">
-        <i class="fas fa-graduation-cap"></i> {{ site.title }}
-      </a>
+      <div class="nav-brand-group">
+        {% if show_sidebar %}
+        <button id="navSidebarToggle" class="nav-sidebar-toggle-btn" aria-label="Toggle Sidebar Navigation" title="Toggle Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        {% endif %}
+        <a href="{{ '/' | relative_url }}" class="nav-logo">
+          <i class="fas fa-graduation-cap"></i> <span class="nav-logo-text">{{ site.title }}</span>
+        </a>
+      </div>
 
       <!-- Desktop Category Navigation -->
       <div class="nav-links">
@@ -130,11 +137,20 @@
     </div>
   </div>
 
+  <!-- Sidebar Overlay Backdrop for Tablet & Mobile -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <!-- Layout Container -->
   <div class="layout-container{% unless show_sidebar %} no-sidebar{% endunless %}">
     <!-- Left Sidebar (Tree Navigation) -->
     {% if show_sidebar %}
     <aside class="sidebar" id="sidebarMenu">
+      <div class="sidebar-header-mobile">
+        <span class="sidebar-header-title"><i class="fas fa-book-open"></i> Navigation</span>
+        <button id="sidebarCloseBtn" class="sidebar-close-btn" aria-label="Close Navigation Menu" title="Close Menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
       <nav class="sidebar-nav">
         {% if page.url contains '/System-Design/' %}
         {% include sidebar-system-design.html %}
@@ -251,20 +267,42 @@
 
   <!-- Script triggers -->
   <script>
-    // Sidebar menu toggle for mobile
-    const sidebarToggle = document.getElementById('sidebarToggle');
+    // Responsive Sidebar Toggle & Drawer Control (Tablet & Mobile)
     const sidebarMenu = document.getElementById('sidebarMenu');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const navSidebarToggle = document.getElementById('navSidebarToggle');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
 
-    if (sidebarToggle && sidebarMenu) {
-      sidebarToggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        sidebarMenu.classList.toggle('open');
-      });
+    function openSidebar() {
+      if (sidebarMenu) sidebarMenu.classList.add('open');
+      if (sidebarOverlay) sidebarOverlay.classList.add('active');
+      document.body.classList.add('sidebar-open-body');
     }
 
-    document.addEventListener('click', function (event) {
-      if (sidebarMenu && sidebarMenu.classList.contains('open') && !sidebarMenu.contains(event.target)) {
-        sidebarMenu.classList.remove('open');
+    function closeSidebar() {
+      if (sidebarMenu) sidebarMenu.classList.remove('open');
+      if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+      document.body.classList.remove('sidebar-open-body');
+    }
+
+    function toggleSidebar(e) {
+      if (e) e.stopPropagation();
+      if (sidebarMenu && sidebarMenu.classList.contains('open')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    }
+
+    if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+    if (navSidebarToggle) navSidebarToggle.addEventListener('click', toggleSidebar);
+    if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeSidebar();
       }
     });
 
