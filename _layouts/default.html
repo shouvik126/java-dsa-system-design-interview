@@ -263,6 +263,34 @@
       </footer>
       {% endif %}
     </main>
+
+    <!-- Right Sidebar (Table of Contents / On This Page) -->
+    <aside class="toc-sidebar" id="tocSidebar">
+      <div class="toc-container">
+        <div class="toc-progress-wrapper">
+          <div class="toc-progress-header">
+            <span class="toc-progress-title"><i class="fas fa-book-open"></i> Reading Progress</span>
+            <span class="toc-progress-percentage" id="tocProgressPercent">0%</span>
+          </div>
+          <div class="toc-progress-bar">
+            <div class="toc-progress-fill" id="tocProgressFill"></div>
+          </div>
+        </div>
+
+        <div class="toc-action-link">
+          <a href="https://github.com/shouvik126/java-dsa-system-design-interview/issues" target="_blank" rel="noopener">
+            <i class="fas fa-box-open"></i> Vote for new content
+          </a>
+        </div>
+
+        <div class="toc-divider"></div>
+
+        <div class="toc-section-title">On This Page</div>
+        <nav class="toc-nav" id="tocNav">
+          <!-- Dynamically populated by JavaScript -->
+        </nav>
+      </div>
+    </aside>
   </div>
 
   <!-- Script triggers -->
@@ -465,6 +493,147 @@
 
     if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
     if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', toggleTheme);
+
+    // Right Sidebar Table of Contents (TOC) & ScrollSpy Handler
+    (function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        const markdownBody = document.querySelector('.markdown-body');
+        const tocSidebar = document.getElementById('tocSidebar');
+        const tocNav = document.getElementById('tocNav');
+        const tocProgressPercent = document.getElementById('tocProgressPercent');
+        const tocProgressFill = document.getElementById('tocProgressFill');
+
+        if (!markdownBody || !tocNav) return;
+
+        // Select h2, h3, h4 headings from article
+        const headings = Array.from(markdownBody.querySelectorAll('h2, h3, h4'));
+
+        if (headings.length === 0) {
+          if (tocSidebar) tocSidebar.style.display = 'none';
+          return;
+        }
+
+        // Build Table of Contents list
+        const tocList = document.createElement('ul');
+        tocList.className = 'toc-list';
+
+        const tocItems = [];
+
+        headings.forEach((heading, index) => {
+          // Ensure unique ID for heading anchors
+          if (!heading.id) {
+            const slug = heading.textContent
+              .trim()
+              .toLowerCase()
+              .replace(/[^\w\s-]/g, '')
+              .replace(/\s+/g, '-');
+            heading.id = slug || `heading-${index}`;
+          }
+
+          const tagName = heading.tagName.toLowerCase();
+          const li = document.createElement('li');
+          li.className = `toc-item level-${tagName}`;
+
+          const a = document.createElement('a');
+          a.href = `#${heading.id}`;
+          a.className = 'toc-link';
+          a.textContent = heading.textContent.replace(/^#+\s*/, '').trim();
+
+          li.appendChild(a);
+          tocList.appendChild(li);
+
+          tocItems.push({
+            heading: heading,
+            link: a
+          });
+        });
+
+        tocNav.appendChild(tocList);
+
+        // Smooth Scrolling when clicking TOC links
+        tocList.addEventListener('click', function (e) {
+          const link = e.target.closest('.toc-link');
+          if (!link) return;
+
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetEl = document.getElementById(targetId);
+
+          if (targetEl) {
+            const navbarOffset = 80;
+            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navbarOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+
+            if (history.pushState) {
+              history.pushState(null, null, `#${targetId}`);
+            } else {
+              location.hash = `#${targetId}`;
+            }
+          }
+        });
+
+        // ScrollSpy & Reading Progress Tracker
+        function onScroll() {
+          // 1. Reading Progress
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const currentScroll = window.scrollY || document.documentElement.scrollTop;
+          
+          let percentage = 0;
+          if (totalHeight > 0) {
+            percentage = Math.min(100, Math.max(0, Math.round((currentScroll / totalHeight) * 100)));
+          } else {
+            percentage = 100;
+          }
+
+          if (tocProgressPercent) tocProgressPercent.textContent = `${percentage}%`;
+          if (tocProgressFill) tocProgressFill.style.width = `${percentage}%`;
+
+          // 2. ScrollSpy Highlighting
+          let activeIndex = -1;
+          const scrollPosition = currentScroll + 120; // top offset for active trigger
+
+          if ((window.innerHeight + currentScroll) >= (document.documentElement.scrollHeight - 30)) {
+            activeIndex = tocItems.length - 1;
+          } else {
+            for (let i = 0; i < tocItems.length; i++) {
+              const top = tocItems[i].heading.getBoundingClientRect().top + currentScroll;
+              if (scrollPosition >= top) {
+                activeIndex = i;
+              } else {
+                break;
+              }
+            }
+          }
+
+          tocItems.forEach((item, idx) => {
+            if (idx === activeIndex) {
+              item.link.classList.add('active');
+            } else {
+              item.link.classList.remove('active');
+            }
+          });
+        }
+
+        let isTicking = false;
+        window.addEventListener('scroll', function () {
+          if (!isTicking) {
+            window.requestAnimationFrame(function () {
+              onScroll();
+              isTicking = false;
+            });
+            isTicking = true;
+          }
+        }, { passive: true });
+
+        // Initial scroll spy check
+        onScroll();
+      });
+    })();
   </script>
 </body>
 
