@@ -90,6 +90,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz - Designing Facebook Messenger](./4-system-design-problems/4.7-quiz-designing-facebook-messenger.md)
 *   [Designing Twitter](./4-system-design-problems/4.8-designing-twitter.md)
 *   [Quiz - Designing Twitter](./4-system-design-problems/4.8-quiz-designing-twitter.md)
+*   [Designing Youtube or Netflix](./4-system-design-problems/4.9-designing-youtube-or-netflix.md)
 
 ---
 
