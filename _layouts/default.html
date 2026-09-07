@@ -505,8 +505,8 @@
 
         if (!markdownBody || !tocNav) return;
 
-        // Select h2, h3, h4 headings from article
-        const headings = Array.from(markdownBody.querySelectorAll('h2, h3, h4'));
+        // Select h2, h3 headings from article
+        const headings = Array.from(markdownBody.querySelectorAll('h2, h3'));
 
         if (headings.length === 0) {
           if (tocSidebar) tocSidebar.style.display = 'none';
