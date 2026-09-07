@@ -94,6 +94,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz - Designing Youtube or Netflix](./4-system-design-problems/4.9-quiz-designing-youtube-or-netflix.md)
 *   [Designing Typeahead Suggestion](./4-system-design-problems/4.10-designing-typeahead-suggestion.md)
 *   [Quiz - Designing Typeahead Suggestion](./4-system-design-problems/4.10-quiz-designing-typeahead-suggestion.md)
+*   [Designing an API Rate Limiter](./4-system-design-problems/4.11-designing-an-api-rate-limiter.md)
 
 ---
 
