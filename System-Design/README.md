@@ -105,4 +105,4 @@ graph TD
 2.  **Back-of-the-Envelope Estimation**: Estimate DAU (Daily Active Users), QPS (Queries Per Second), storage requirements, and bandwidth requirements.
 3.  **High-Level Design**: Draw block diagrams of the main components (Clients, Load Balancers, Web Servers, Database, Cache, File Storage).
 4.  **Deep Dive**: Focus on specific components requested by the interviewer (e.g., database schema design, caching layer optimization, scaling a specific service).
-5.  **Identify Bottlenecks**: Discuss failure points, monitoring, rate limiting, security, and single points of failure (SPOFs).
+5.  **Identify Bottlenecks**: Discuss failure points, monitoring, rate limiting, security, and single points of failure (SPOFs). 
