@@ -87,6 +87,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Designing Dropbox](./4-system-design-problems/4.6-designing-dropbox.md)
 *   [Quiz - Designing Dropbox](./4-system-design-problems/4.6-quiz-designing-dropbox.md)
 *   [Designing Facebook Messenger](./4-system-design-problems/4.7-designing-facebook-messenger.md)
+*   [Quiz - Designing Facebook Messenger](./4-system-design-problems/4.7-quiz-designing-facebook-messenger.md)
 
 ---
 
