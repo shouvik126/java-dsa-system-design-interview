@@ -95,6 +95,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Designing Typeahead Suggestion](./4-system-design-problems/4.10-designing-typeahead-suggestion.md)
 *   [Quiz - Designing Typeahead Suggestion](./4-system-design-problems/4.10-quiz-designing-typeahead-suggestion.md)
 *   [Designing an API Rate Limiter](./4-system-design-problems/4.11-designing-an-api-rate-limiter.md)
+*   [Quiz - Designing an API Rate Limiter](./4-system-design-problems/4.11-quiz-designing-an-api-rate-limiter.md)
 
 ---
 
