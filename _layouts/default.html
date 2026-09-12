@@ -241,8 +241,14 @@
     </div>
   </div>
 
-  <!-- Sidebar Overlay Backdrop for Tablet & Mobile -->
+  <!-- Floating Right Sidebar TOC Toggle Button for Tablet & Mobile -->
+  <button id="tocToggleBtn" class="toc-toggle-btn" aria-label="Toggle Reading Progress & Table of Contents" title="On This Page">
+    <i class="fas fa-list-ul"></i>
+  </button>
+
+  <!-- Sidebar Overlay Backdrops for Tablet & Mobile -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="toc-overlay" id="tocOverlay"></div>
 
   <!-- Layout Container -->
   <div class="layout-container{% unless show_sidebar %} no-sidebar{% endunless %}">
@@ -370,6 +376,12 @@
 
     <!-- Right Sidebar (Table of Contents / On This Page) -->
     <aside class="toc-sidebar" id="tocSidebar">
+      <div class="toc-header-mobile">
+        <span class="toc-header-title"><i class="fas fa-list-ul"></i> On This Page</span>
+        <button id="tocCloseBtn" class="toc-close-btn" aria-label="Close Table of Contents" title="Close Menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
       <div class="toc-container">
         <div class="toc-progress-wrapper">
           <div class="toc-progress-header">
@@ -432,9 +444,43 @@
     if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
     if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
 
+    // Responsive Right Sidebar TOC Toggle & Drawer Control (Tablet & Mobile)
+    const tocSidebar = document.getElementById('tocSidebar');
+    const tocToggleBtn = document.getElementById('tocToggleBtn');
+    const tocCloseBtn = document.getElementById('tocCloseBtn');
+    const tocOverlay = document.getElementById('tocOverlay');
+
+    function openTocSidebar() {
+      if (tocSidebar) tocSidebar.classList.add('open');
+      if (tocOverlay) tocOverlay.classList.add('active');
+      if (tocToggleBtn) tocToggleBtn.classList.add('active');
+      document.body.classList.add('toc-open-body');
+    }
+
+    function closeTocSidebar() {
+      if (tocSidebar) tocSidebar.classList.remove('open');
+      if (tocOverlay) tocOverlay.classList.remove('active');
+      if (tocToggleBtn) tocToggleBtn.classList.remove('active');
+      document.body.classList.remove('toc-open-body');
+    }
+
+    function toggleTocSidebar(e) {
+      if (e) e.stopPropagation();
+      if (tocSidebar && tocSidebar.classList.contains('open')) {
+        closeTocSidebar();
+      } else {
+        openTocSidebar();
+      }
+    }
+
+    if (tocToggleBtn) tocToggleBtn.addEventListener('click', toggleTocSidebar);
+    if (tocCloseBtn) tocCloseBtn.addEventListener('click', closeTocSidebar);
+    if (tocOverlay) tocOverlay.addEventListener('click', closeTocSidebar);
+
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         closeSidebar();
+        closeTocSidebar();
       }
     });
 
@@ -706,6 +752,7 @@
 
         if (headings.length === 0) {
           if (tocSidebar) tocSidebar.style.display = 'none';
+          if (tocToggleBtn) tocToggleBtn.style.display = 'none';
           return;
         }
 
@@ -767,6 +814,9 @@
             } else {
               location.hash = `#${targetId}`;
             }
+
+            // Close TOC slide-in drawer on mobile/tablet after clicking a section link
+            closeTocSidebar();
           }
         });
 
