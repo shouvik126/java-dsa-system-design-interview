@@ -15,17 +15,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
-  <!-- Inline Theme Script to prevent flash of light theme -->
+  <!-- Inline Preferences Script to prevent flash of unstyled content -->
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme') || 'light';
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark-theme');
+      if (savedTheme !== 'light') {
+        document.documentElement.classList.add(savedTheme + '-theme');
       }
+
+      const savedFontSize = localStorage.getItem('fontSize') || 'md';
+      document.documentElement.setAttribute('data-font-size', savedFontSize);
+
+      const savedFontFamily = localStorage.getItem('fontFamily') || 'inter';
+      document.documentElement.setAttribute('data-font-family', savedFontFamily);
     })();
   </script>
   <!-- MathJax Configuration for Math Rendering -->
@@ -85,9 +91,107 @@
           title="View on GitHub">
           <i class="fab fa-github"></i> <span>GitHub</span>
         </a>
-        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Theme">
-          <i class="fas fa-moon"></i>
-        </button>
+        <div class="settings-dropdown-wrapper">
+          <button id="settingsToggle" class="settings-toggle-btn" aria-label="Settings Preferences" title="Settings">
+            <i class="fas fa-cog"></i>
+          </button>
+          <div id="settingsMenu" class="settings-dropdown-menu" role="menu">
+            <div class="settings-header">
+              <i class="fas fa-sliders"></i> Preferences
+            </div>
+            
+            <!-- Colour Themes -->
+            <div class="settings-section">
+              <div class="settings-section-title">
+                <i class="fas fa-palette"></i> Colour Themes
+              </div>
+              <div class="settings-options theme-options">
+                <button class="settings-option-btn" data-theme="light">
+                  <div class="option-left">
+                    <span class="option-color-swatch swatch-light"></span>
+                    <span>Light</span>
+                  </div>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-theme="dark">
+                  <div class="option-left">
+                    <span class="option-color-swatch swatch-dark"></span>
+                    <span>Dark</span>
+                  </div>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-theme="solarized-light">
+                  <div class="option-left">
+                    <span class="option-color-swatch swatch-solarized-light"></span>
+                    <span>Solarized Light</span>
+                  </div>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-theme="solarized-dark">
+                  <div class="option-left">
+                    <span class="option-color-swatch swatch-solarized-dark"></span>
+                    <span>Solarized Dark</span>
+                  </div>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- Font Size -->
+            <div class="settings-section">
+              <div class="settings-section-title">
+                <i class="fas fa-text-height"></i> Font Size
+              </div>
+              <div class="settings-options font-size-options">
+                <button class="settings-option-btn" data-font-size="sm">
+                  <span>Small (14px)</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-font-size="md">
+                  <span>Medium (16px)</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-font-size="lg">
+                  <span>Large (18px)</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-font-size="xl">
+                  <span>Extra Large (20px)</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="settings-divider"></div>
+
+            <!-- Font Family -->
+            <div class="settings-section">
+              <div class="settings-section-title">
+                <i class="fas fa-font"></i> Font Family
+              </div>
+              <div class="settings-options font-family-options">
+                <button class="settings-option-btn" data-font-family="inter" style="font-family: 'Inter', sans-serif;">
+                  <span>Inter (Sans)</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-font-family="roboto" style="font-family: 'Roboto', sans-serif;">
+                  <span>Roboto</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-font-family="georgia" style="font-family: 'Georgia', serif;">
+                  <span>Georgia (Serif)</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+                <button class="settings-option-btn" data-font-family="jetbrains" style="font-family: 'JetBrains Mono', monospace;">
+                  <span>JetBrains Mono</span>
+                  <i class="fas fa-check check-icon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -107,8 +211,8 @@
         title="View on GitHub" aria-label="View on GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <button id="themeToggleMobile" class="mobile-btn" aria-label="Toggle Dark Theme">
-        <i class="fas fa-moon"></i>
+      <button id="settingsToggleMobile" class="mobile-btn" aria-label="Settings Preferences" title="Settings">
+        <i class="fas fa-cog"></i>
       </button>
     </div>
   </div>
@@ -379,7 +483,7 @@
       if (typeof mermaid !== 'undefined') {
         mermaid.initialize({
           startOnLoad: true,
-          theme: document.documentElement.classList.contains('dark-theme') ? 'dark' : 'default',
+          theme: (document.documentElement.classList.contains('dark-theme') || document.documentElement.classList.contains('solarized-dark-theme')) ? 'dark' : 'default',
           securityLevel: 'loose'
         });
         if (typeof mermaid.run === 'function') {
@@ -447,16 +551,77 @@
       });
     });
 
-    // Light/Dark Theme Switcher
-    const toggleBtn = document.getElementById('themeToggle');
-    const toggleBtnMobile = document.getElementById('themeToggleMobile');
+    // ==========================================================================
+    // Settings Preferences Manager (Colour Themes, Font Size, Font Family)
+    // ==========================================================================
+    const settingsToggle = document.getElementById('settingsToggle');
+    const settingsToggleMobile = document.getElementById('settingsToggleMobile');
+    const settingsMenu = document.getElementById('settingsMenu');
 
-    function toggleTheme() {
-      const isDark = document.documentElement.classList.toggle('dark-theme');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateToggleIcons(isDark);
+    function toggleSettingsMenu(e) {
+      if (e) e.stopPropagation();
+      if (!settingsMenu) return;
+      const isOpen = settingsMenu.classList.contains('open');
 
-      // Re-render Mermaid charts in the new theme on-the-fly
+      if (isOpen) {
+        closeSettingsMenu();
+      } else {
+        openSettingsMenu(e ? e.currentTarget : settingsToggle);
+      }
+    }
+
+    function openSettingsMenu(targetBtn) {
+      if (!settingsMenu) return;
+      if (targetBtn === settingsToggleMobile && window.innerWidth <= 768) {
+        settingsMenu.style.position = 'fixed';
+        settingsMenu.style.top = '60px';
+        settingsMenu.style.right = '12px';
+      } else {
+        settingsMenu.style.position = '';
+        settingsMenu.style.top = '';
+        settingsMenu.style.right = '';
+      }
+
+      settingsMenu.classList.add('open');
+      if (settingsToggle) settingsToggle.classList.add('active');
+      if (settingsToggleMobile) settingsToggleMobile.classList.add('active');
+    }
+
+    function closeSettingsMenu() {
+      if (!settingsMenu) return;
+      settingsMenu.classList.remove('open');
+      if (settingsToggle) settingsToggle.classList.remove('active');
+      if (settingsToggleMobile) settingsToggleMobile.classList.remove('active');
+    }
+
+    if (settingsToggle) settingsToggle.addEventListener('click', toggleSettingsMenu);
+    if (settingsToggleMobile) settingsToggleMobile.addEventListener('click', toggleSettingsMenu);
+
+    document.addEventListener('click', function (e) {
+      if (settingsMenu && settingsMenu.classList.contains('open')) {
+        if (!settingsMenu.contains(e.target) &&
+            (!settingsToggle || !settingsToggle.contains(e.target)) &&
+            (!settingsToggleMobile || !settingsToggleMobile.contains(e.target))) {
+          closeSettingsMenu();
+        }
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeSettingsMenu();
+      }
+    });
+
+    function setTheme(themeName) {
+      document.documentElement.classList.remove('dark-theme', 'solarized-light-theme', 'solarized-dark-theme');
+      if (themeName !== 'light') {
+        document.documentElement.classList.add(`${themeName}-theme`);
+      }
+      localStorage.setItem('theme', themeName);
+      updateSettingsActiveState();
+
+      const isDarkOrSolarizedDark = themeName === 'dark' || themeName === 'solarized-dark';
       if (typeof mermaid !== 'undefined') {
         const charts = document.querySelectorAll('.mermaid');
         if (charts.length > 0) {
@@ -469,7 +634,7 @@
             }
           });
           mermaid.initialize({
-            theme: isDark ? 'dark' : 'default',
+            theme: isDarkOrSolarizedDark ? 'dark' : 'default',
             securityLevel: 'loose'
           });
           if (typeof mermaid.run === 'function') {
@@ -481,18 +646,53 @@
       }
     }
 
-    function updateToggleIcons(isDark) {
-      const iconClass = isDark ? 'fas fa-sun' : 'fas fa-moon';
-      if (toggleBtn) toggleBtn.innerHTML = `<i class="${iconClass}"></i>`;
-      if (toggleBtnMobile) toggleBtnMobile.innerHTML = `<i class="${iconClass}"></i>`;
+    function setFontSize(sizeKey) {
+      document.documentElement.setAttribute('data-font-size', sizeKey);
+      localStorage.setItem('fontSize', sizeKey);
+      updateSettingsActiveState();
     }
 
-    // Set initial icons on load
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    updateToggleIcons(currentTheme === 'dark');
+    function setFontFamily(familyKey) {
+      document.documentElement.setAttribute('data-font-family', familyKey);
+      localStorage.setItem('fontFamily', familyKey);
+      updateSettingsActiveState();
+    }
 
-    if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
-    if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', toggleTheme);
+    function updateSettingsActiveState() {
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      const currentFontSize = localStorage.getItem('fontSize') || 'md';
+      const currentFontFamily = localStorage.getItem('fontFamily') || 'inter';
+
+      document.querySelectorAll('.settings-option-btn[data-theme]').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-theme') === currentTheme);
+      });
+      document.querySelectorAll('.settings-option-btn[data-font-size]').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-font-size') === currentFontSize);
+      });
+      document.querySelectorAll('.settings-option-btn[data-font-family]').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-font-family') === currentFontFamily);
+      });
+    }
+
+    document.querySelectorAll('.settings-option-btn[data-theme]').forEach(btn => {
+      btn.addEventListener('click', function () {
+        setTheme(this.getAttribute('data-theme'));
+      });
+    });
+
+    document.querySelectorAll('.settings-option-btn[data-font-size]').forEach(btn => {
+      btn.addEventListener('click', function () {
+        setFontSize(this.getAttribute('data-font-size'));
+      });
+    });
+
+    document.querySelectorAll('.settings-option-btn[data-font-family]').forEach(btn => {
+      btn.addEventListener('click', function () {
+        setFontFamily(this.getAttribute('data-font-family'));
+      });
+    });
+
+    updateSettingsActiveState();
 
     // Right Sidebar Table of Contents (TOC) & ScrollSpy Handler
     (function () {
