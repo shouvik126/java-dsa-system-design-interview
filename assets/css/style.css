@@ -101,15 +101,19 @@
    ========================================================================== */
 html[data-font-size="sm"] {
   --base-font-size: 14px;
+  font-size: 14px;
 }
 html[data-font-size="md"] {
   --base-font-size: 16px;
+  font-size: 16px;
 }
 html[data-font-size="lg"] {
   --base-font-size: 18px;
+  font-size: 18px;
 }
 html[data-font-size="xl"] {
   --base-font-size: 20px;
+  font-size: 20px;
 }
 
 html[data-font-family="inter"] {
@@ -873,7 +877,7 @@ body.sidebar-open-body {
    ========================================================================== */
 .markdown-body {
   color: var(--text-secondary);
-  font-size: 16px;
+  font-size: var(--base-font-size, 16px);
   line-height: 1.7;
 }
 

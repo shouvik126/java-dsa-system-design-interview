@@ -444,8 +444,6 @@
       const subTree = group.querySelector('.sub-tree');
       if (!header || !subTree) return;
 
-      // Determine initial state: if it contains an active link, keep it open.
-      // Otherwise, start collapsed.
       const hasActive = subTree.querySelector('.active-link');
       if (!hasActive) {
         group.classList.add('collapsed');
@@ -468,10 +466,9 @@
 
         let parentToReplace = block;
         if (block.tagName === 'CODE') {
-          parentToReplace = block.parentElement; // pre
+          parentToReplace = block.parentElement;
         }
 
-        // If Kramdown wraps it in outer divs (.highlighter-rouge, etc.)
         if (parentToReplace.parentElement && parentToReplace.parentElement.classList.contains('highlight')) {
           parentToReplace = parentToReplace.parentElement.parentElement;
         }
@@ -705,7 +702,6 @@
 
         if (!markdownBody || !tocNav) return;
 
-        // Select h2, h3 headings from article
         const headings = Array.from(markdownBody.querySelectorAll('h2, h3'));
 
         if (headings.length === 0) {
@@ -713,14 +709,12 @@
           return;
         }
 
-        // Build Table of Contents list
         const tocList = document.createElement('ul');
         tocList.className = 'toc-list';
 
         const tocItems = [];
 
         headings.forEach((heading, index) => {
-          // Ensure unique ID for heading anchors
           if (!heading.id) {
             const slug = heading.textContent
               .trim()
@@ -750,7 +744,6 @@
 
         tocNav.appendChild(tocList);
 
-        // Smooth Scrolling when clicking TOC links
         tocList.addEventListener('click', function (e) {
           const link = e.target.closest('.toc-link');
           if (!link) return;
@@ -777,9 +770,7 @@
           }
         });
 
-        // ScrollSpy & Reading Progress Tracker
         function onScroll() {
-          // 1. Reading Progress
           const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
           const currentScroll = window.scrollY || document.documentElement.scrollTop;
           
@@ -793,9 +784,8 @@
           if (tocProgressPercent) tocProgressPercent.textContent = `${percentage}%`;
           if (tocProgressFill) tocProgressFill.style.width = `${percentage}%`;
 
-          // 2. ScrollSpy Highlighting
           let activeIndex = -1;
-          const scrollPosition = currentScroll + 120; // top offset for active trigger
+          const scrollPosition = currentScroll + 120;
 
           if ((window.innerHeight + currentScroll) >= (document.documentElement.scrollHeight - 30)) {
             activeIndex = tocItems.length - 1;
@@ -830,7 +820,6 @@
           }
         }, { passive: true });
 
-        // Initial scroll spy check
         onScroll();
       });
     })();
