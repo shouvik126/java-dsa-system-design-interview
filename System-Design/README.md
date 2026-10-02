@@ -100,6 +100,8 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz - Designing Twitter Search](./4-system-design-problems/4.12-quiz-designing-twitter-search.md)
 *   [Designing a Web Crawler](./4-system-design-problems/4.13-designing-a-web-crawler.md)
 *   [Quiz - Designing a Web Crawler](./4-system-design-problems/4.13-quiz-designing-a-web-crawler.md)
+*   [Designing Facebook's Newsfeed](./4-system-design-problems/4.14-designing-facebook-newsfeed.md)
+*   [Quiz - Designing Facebook's Newsfeed](./4-system-design-problems/4.14-quiz-designing-facebook-newsfeed.md)
 
 ---
 
