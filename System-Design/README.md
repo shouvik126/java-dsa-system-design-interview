@@ -106,6 +106,8 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz - Designing Yelp or a Proximity Server](./4-system-design-problems/4.15-quiz-designing-yelp-or-nearby-friends.md)
 *   [Designing Uber Backend](./4-system-design-problems/4.16-designing-uber-backend.md)
 *   [Quiz - Designing Uber Backend](./4-system-design-problems/4.16-quiz-designing-uber-backend.md)
+*   [Designing Ticketmaster](./4-system-design-problems/4.17-designing-ticketmaster.md)
+*   [Quiz - Designing Ticketmaster](./4-system-design-problems/4.17-quiz-designing-ticketmaster.md)
 
 ---
 
