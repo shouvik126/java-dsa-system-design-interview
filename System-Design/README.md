@@ -104,6 +104,8 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Quiz - Designing Facebook's Newsfeed](./4-system-design-problems/4.14-quiz-designing-facebook-newsfeed.md)
 *   [Designing Yelp or a Proximity Server](./4-system-design-problems/4.15-designing-yelp-or-nearby-friends.md)
 *   [Quiz - Designing Yelp or a Proximity Server](./4-system-design-problems/4.15-quiz-designing-yelp-or-nearby-friends.md)
+*   [Designing Uber Backend](./4-system-design-problems/4.16-designing-uber-backend.md)
+*   [Quiz - Designing Uber Backend](./4-system-design-problems/4.16-quiz-designing-uber-backend.md)
 
 ---
 
