@@ -97,6 +97,7 @@ To help you prepare systematically, the content is organized into key focus area
 *   [Designing an API Rate Limiter](./4-system-design-problems/4.11-designing-an-api-rate-limiter.md)
 *   [Quiz - Designing an API Rate Limiter](./4-system-design-problems/4.11-quiz-designing-an-api-rate-limiter.md)
 *   [Designing Twitter Search](./4-system-design-problems/4.12-designing-twitter-search.md)
+*   [Quiz - Designing Twitter Search](./4-system-design-problems/4.12-quiz-designing-twitter-search.md)
 
 ---
 
